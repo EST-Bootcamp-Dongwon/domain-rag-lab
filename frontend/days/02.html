@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/fund-case-market.css?v=20260905-1" />
     <link rel="stylesheet" href="assets/emerging-market-modal.css?v=20260905-1" />
     <link rel="stylesheet" href="assets/fund-manager-add-row.css?v=20260905-1" />
+    <link rel="stylesheet" href="assets/etf-role-detail.css?v=20260914-1" />
     <link rel="stylesheet" href="assets/app-shell.css?v=20260908-modal-text105" />
     <link
       rel="stylesheet"
@@ -137,6 +138,49 @@
           <section class="lesson">
             <span>00</span>
             <div class="lesson-content">
+              <h2>포지션과 노출이라는 단어는 무엇을 뜻할까요?</h2>
+              <div class="lesson-body">
+                <p>금융에서 ‘노출(Exposure, 익스포저)’이라는 표현을 쓰는 이유는 <strong>시장 변동성(환율, 금리, 주가 등)의 영향권 안에 그대로 열려 있어, 가격 변화에 따른 손익 위험을 직접적으로 맞닥뜨리고 있는 상태</strong>를 명확하게 전달하기 위해서입니다.</p>
+                <p>앞서 다룬 포지션(Position)이 "어느 방향으로 자산을 들고 있는가(자세)"라면, 노출(Exposure)은 "그로 인해 시장의 위험에 얼마나 <strong>노출되어(dosed/exposed)</strong> 영향을 받는가(위험 노출 정도)"를 의미합니다.</p>
+                <h3>‘노출’이라는 단어를 사용하는 3가지 핵심 이유</h3>
+                <h4>1. 위험 요소에 무방비로 열려 있음(Unprotected)을 표현</h4>
+                <ul>
+                  <li><strong>의미:</strong> 방패 없이 비바람에 그대로 '노출'되듯이, <strong>환율이나 가격이 변하면 내 자산 가치도 피할 수 없이 변동</strong>된다는 상태를 뜻합니다.</li>
+                  <li><strong>예시:</strong> 미국 주식을 10만 달러어치 사서 그대로 들고 있다면, 환율 변동 위험에 "환율 노출(FX Exposure) 상태"가 됩니다.</li>
+                </ul>
+                <h4>2. '노출 상태(Unhedged)'와 '차단 상태(Hedged)'의 명확한 구분</h4>
+                <p>금융에서는 환율 변동에 위험을 맞닥뜨릴지, 아니면 위험을 막아둘지 정해야 합니다.</p>
+                <ul>
+                  <li><strong>환노출 (Unhedged):</strong> 환율 오르내림에 자산 가치가 그대로 영향을 받음 (달러 상승 시 추가 이익, 달러 하락 시 손실).</li>
+                  <li><strong>환헤지 (Hedged):</strong> 선물환 계약 등을 통해 환율 변동 영향을 차단함 (환율이 오르든 내리든 손익 영향 최소화).</li>
+                </ul>
+                <h4>3. 손실 가능 규모(금액)의 정량화</h4>
+                <p>'노출'은 단순한 상태를 넘어 "위험에 드러나 있는 전체 금액"을 나타내는 수치로 쓰입니다.</p>
+                <ul>
+                  <li>예: <em>"우리 회사의 대미 달러 익스포저(노출액)는 1,000만 달러다."</em><br />→ 환율이 10% 변동할 때 1,000만 달러 규모만큼 손익에 직격탄을 맞는다는 뜻입니다.</li>
+                </ul>
+                <h3>자산별 금융 ‘노출(Exposure)’의 주요 유형</h3>
+                <div class="lesson-table-wrap">
+                  <table class="lesson-table">
+                    <thead><tr><th scope="col">노출 유형</th><th scope="col">주요 의미</th><th scope="col">위험 요소</th></tr></thead>
+                    <tbody>
+                      <tr><th scope="row">환율 노출 (FX Exposure)</th><td>외화 자산 보유로 환율 변동에 손익이 열려 있는 상태</td><td>원/달러 등 환율 폭등·폭락</td></tr>
+                      <tr><th scope="row">금리 노출 (Interest Rate Exposure)</th><td>채권이나 변동금리 대출을 통해 금리 변화에 영향을 받는 상태</td><td>기준금리 인상·인하</td></tr>
+                      <tr><th scope="row">신용 노출 (Credit Exposure)</th><td>특정 거래 상대방이나 기업의 부도 위험에 열려 있는 금액</td><td>대출 기업의 파산, 채권 디폴트</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <blockquote>
+                  <p><strong>요약</strong></p>
+                  <p>금융에서 <strong>'노출'</strong>은 위험한 외부 환경(환율·금리·변동성)에 <strong>"내 자산이 그대로 드러나 있어 영향을 받는 상태 및 그 규모"</strong>를 뜻하는 가장 정확한 금융 표준 용어입니다.</p>
+                </blockquote>
+              </div>
+            </div>
+            <button class="lesson-toggle" type="button" data-lesson-toggle aria-expanded="true" aria-label="포지션과 노출이라는 단어는 무엇을 뜻할까요 내용 접기" title="내용 접기"><span aria-hidden="true">⌃</span></button>
+          </section>
+          <section class="lesson">
+            <span>00</span>
+            <div class="lesson-content">
               <h2>은행·금리·이자율, 금융의 기본 언어</h2>
               <div class="lesson-body">
                 <h3>금융회사의 역할과 도덕적 해이</h3>
@@ -208,6 +252,39 @@
               <div class="lesson-body">
                 <p>금융상품은 ‘수익률이 높은 것’ 하나를 고르는 문제가 아니라, 언제 돈이 필요한지에 맞춰 나누어 쓰는 도구입니다. 사회초년생은 비상자금과 가까운 목표를, 자녀교육·주거를 준비하는 시기에는 필요한 시점의 자금을, 은퇴가 가까운 시기에는 생활비와 큰 손실을 견딜 수 있는 범위를 먼저 정해 볼 수 있습니다.</p>
                 <p><b>은행 예금</b>은 목돈을 일정 기간 맡기고 약정 이자를 받는 상품입니다. <b>적금</b>은 매달 정한 돈을 넣어 목돈을 만드는 방식입니다. 둘 다 예금자보호 대상 여부와 한도, 중도해지 이율을 금융회사별 상품설명서에서 확인해야 합니다. <b>펀드</b>는 여러 투자자의 돈을 모아 주식·채권 등에 투자하는 상품으로, 기준가격이 오르내리고 원금이나 수익률이 보장되지 않습니다.</p>
+                <p><strong>아닙니다. 펀드는 환매를 하지 않아도 원금이 그냥 무이자로 멈춰있는 것이 아닙니다.</strong></p>
+                <p>펀드는 은행의 예·적금처럼 정해진 이자가 붙는 구조가 아니라, <strong>펀드가 담고 있는 자산(주식, 채권, 부동산 등)의 가치가 매일 변동하는 구조</strong>이기 때문입니다.</p>
+                <h3>환매하지 않고 둘 때 일어나는 3가지 현상</h3>
+                <h4>1. 자산 가치(기준가)가 매일 변동합니다</h4>
+                <ul>
+                  <li>펀드가 투자한 자산(예: 삼성전자 주식, 국채 등)의 가격이 오르면 펀드의 <strong>기준가(수익률)도 함께 올라 이익</strong>이 납니다.</li>
+                  <li>반대로 투자 자산의 가격이 떨어지면 <strong>원금 손실</strong>이 발생할 수 있습니다.</li>
+                </ul>
+                <h4>2. 채권형/배당형 펀드는 배당·이자 수익이 계속 쌓입니다</h4>
+                <ul>
+                  <li><strong>채권형 펀드:</strong> 펀드가 보유한 채권에서 매일 이자가 발생하여 펀드 자산(기준가)에 자동으로 반영됩니다.</li>
+                  <li><strong>주식형 펀드:</strong> 보유 주식에서 배당금이 나오면 펀드 자산으로 재투자되어 가치가 상승합니다.</li>
+                </ul>
+                <h4>3. 운용보수(수수료)가 매일 차감됩니다</h4>
+                <ul>
+                  <li>펀드를 보유하는 동안 운용사, 증권사, 수탁사에 지급하는 <strong>펀드 보수(연 N%)가 매일 365분의 1씩 펀드 자산에서 자동으로 차감</strong>됩니다.</li>
+                  <li>따라서 펀드 내 자산이 아무런 수익을 내지 못하고 정체되어 있다면, 보수만큼 평가금액이 조금씩 줄어들 수 있습니다.</li>
+                </ul>
+                <h3>예금/적금과의 차이점 한눈에 보기</h3>
+                <div class="lesson-table-wrap">
+                  <table class="lesson-table">
+                    <thead><tr><th scope="col">구분</th><th scope="col">은행 예·적금</th><th scope="col">펀드 (Fund)</th></tr></thead>
+                    <tbody>
+                      <tr><th scope="row">만기 후 방치 시</th><td>약정 만기 후 <strong>낮은 만기후 이율(무이자 수준)</strong> 적용</td><td>만기 개념이 없거나, 방치해도 <strong>자산 가치 매일 변동</strong></td></tr>
+                      <tr><th scope="row">수익 발생 원리</th><td>확정 이자 지급</td><td>보유 자산의 가격 변동 + 배당/이자 재투자</td></tr>
+                      <tr><th scope="row">비용 발생</th><td>없음</td><td><strong>운용 보수가 매일 자동 차감</strong></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <blockquote>
+                  <p><strong>요약</strong></p>
+                  <p>펀드는 환매하지 않고 두면 무이자 상태가 되는 것이 아니라, <strong>[매일 자산 가격 변동 + 이자/배당 재투자] - [운용 보수 차감]</strong>이 계속 진행됩니다. 따라서 시장 상황을 점검하면서 목표 수익률에 도달했거나 리밸런싱이 필요할 때 직접 환매를 신청해야 합니다.</p>
+                </blockquote>
                 <h3>집합투자란 무엇인가: 법적 개념과 특징</h3>
                 <p>우리나라 <strong>자본시장과 금융투자업에 관한 법률(자본시장법)</strong>은 집합투자를, <strong>2인 이상에게서 모은 금전 등을 투자자의 일상적인 운용지시 없이 투자대상자산에 운용하고, 그 결과를 투자자에게 배분·귀속시키는 것</strong>으로 봅니다. 일반적으로 말하는 펀드는 이 집합투자 구조를 이용한 대표적 상품입니다. <a href="https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&amp;lsJoLnkSeq=1000928522" target="_blank" rel="noopener noreferrer">자본시장법 제6조 제5항</a>을 기준으로 이해할 수 있습니다.</p>
                 <div class="lesson-table-wrap">
@@ -261,7 +338,7 @@
                 <h3>모은 돈을 거래하는 방식은 어떻게 발전했나</h3>
                 <p><strong>1. 폐쇄형 펀드</strong> — 처음 정한 수만큼 지분을 발행하고, 이후 투자자는 다른 투자자와 지분을 사고팝니다. 그래서 지분의 시장가격이 실제 보유자산 가치(NAV)보다 높거나 낮아질 수 있습니다. 케트비흐의 펀드도 이 방식에 가까웠습니다.</p>
                 <p><strong>2. 개방형 펀드</strong> — 투자자가 운용사에 가입하거나 환매를 신청하면 펀드는 NAV를 기준으로 지분을 새로 발행하거나 없앱니다. 일반 투자자는 보통 장중 가격이 아니라 하루에 한 번 계산되는 기준가격으로 거래합니다. 1976년에는 Vanguard 500 Index Fund가 개인 투자자용 인덱스펀드를 대중화해, 낮은 비용으로 시장 전체를 추종하는 방식을 넓혔습니다.</p>
-                <p><strong>3. ETF</strong> — 일반 투자자는 거래소에서 ETF 지분을 장중 시장가격으로 사고팝니다. 지정참가회사(AP)는 큰 묶음의 ETF 지분을 펀드와 직접 설정·환매하고, 보통 기초자산 바스켓과 교환합니다. 시장가격과 NAV의 차이가 커지면 AP가 차익거래할 유인이 생겨 둘의 차이를 줄이는 구조입니다. 다만 시장가격과 NAV가 항상 같다는 뜻은 아닙니다.</p>
+                <p><strong>3. ETF</strong> — 일반 투자자는 거래소에서 ETF 지분을 장중 시장가격으로 사고팝니다. <button type="button" class="etf-role-trigger" data-etf-role-modal="ap">지정참가회사(AP)</button>는 큰 묶음의 ETF 지분을 펀드와 직접 설정·환매하고, 보통 기초자산 바스켓과 교환합니다. 시장가격과 NAV의 차이가 커지면 AP가 차익거래할 유인이 생겨 둘의 차이를 줄이는 구조입니다. 다만 시장가격과 NAV가 항상 같다는 뜻은 아닙니다.</p>
                 <p>따라서 펀드와 ETF의 공통 출발점은 <strong>소액으로도 위험을 나누고 전문적·규칙 기반 운용에 참여</strong>하게 하려는 데 있습니다. ETF는 여기에 거래소의 장중 유동성을 더한 구조입니다. 분산이 손실을 없애지는 않으므로, 실제 투자 전에는 편입자산·총보수·환매 또는 매매 방식·괴리율을 함께 확인해야 합니다.</p>
               </div>
             </div>
@@ -291,7 +368,7 @@
                     <tbody>
                       <tr><th scope="row">공통 규율</th><td>동일 발행인 증권에 대한 운용한도, 재산의 분리·보관, 공시와 투자자 보호 규율이 기본적으로 적용됩니다. 운용한도에는 법령상 예외와 상품 유형별 특례가 있습니다.</td></tr>
                       <tr><th scope="row">지수 추종 특성</th><td>상장지수집합투자기구는 법정 요건을 충족해 기초지수 변화를 따라가도록 운용됩니다. 지수의 시가총액 비중을 복제해야 하는 경우에는 집중투자 제한을 기계적으로 적용하지 않는 예외·특례가 문제될 수 있습니다.</td></tr>
-                      <tr><th scope="row">설정·환매 구조</th><td>일반 투자자는 거래소에서 ETF를 매매합니다. 지정참가회사(AP)는 보통 주식 바스켓이나 현금을 이용해 ETF 지분을 설정·환매하여 시장가격과 순자산가치(NAV)의 차이를 줄이는 역할을 합니다.</td></tr>
+                      <tr><th scope="row">설정·환매 구조</th><td>일반 투자자는 거래소에서 ETF를 매매합니다. <button type="button" class="etf-role-trigger" data-etf-role-modal="ap">지정참가회사(AP)</button>는 보통 주식 바스켓이나 현금을 이용해 ETF 지분을 설정·환매하여 시장가격과 순자산가치(NAV)의 차이를 줄이는 역할을 합니다.</td></tr>
                       <tr><th scope="row">파생상품 활용</th><td>해외지수·원자재·레버리지 ETF 등은 선물·스왑을 활용할 수 있지만, 이것이 무제한 투자나 위험 제거를 뜻하지는 않습니다. 파생상품 노출, 거래상대방 위험, 롤오버 비용을 따로 확인해야 합니다.</td></tr>
                     </tbody>
                   </table>
@@ -319,6 +396,45 @@
             >
               <span aria-hidden="true">⌃</span>
             </button>
+          </section>
+          <section class="lesson etf-listing-lesson">
+            <span>01.1</span>
+            <div class="lesson-content">
+              <h2>ETF는 어떻게 거래소에 상장될까요?</h2>
+              <div class="lesson-body">
+                <p>ETF 상장은 증권사가 자기 상품을 발행하는 과정이 아니라, <b>자산운용사가 집합투자기구를 설계하고 거래소 상장 요건을 갖추는 과정</b>입니다. 증권사는 <button type="button" class="etf-role-trigger" data-etf-role-modal="ap">지정참가회사(AP)</button>나 <button type="button" class="etf-role-trigger" data-etf-role-modal="lp">유동성공급자(LP)</button>로 참여하거나, 투자자의 주문을 중개할 수 있습니다. 아래는 국내 ETF를 이해하기 위한 일반적인 흐름이며, 상품 유형과 규정에 따라 제출자료·심사 순서는 달라질 수 있습니다.</p>
+                <figure class="etf-listing-visual" aria-label="ETF 상장 절차 5단계 일러스트형 순서도">
+                  <div class="etf-listing-sky"><i class="fa-solid fa-chart-line" aria-hidden="true"></i><span>ETF LISTING JOURNEY</span><i class="fa-solid fa-building-columns" aria-hidden="true"></i></div>
+                  <ol class="etf-listing-flow">
+                    <li class="etf-listing-step idea"><span>01</span><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i><strong>상품 설계</strong><small>추종 대상·운용 방식·위험을 정합니다.</small></li>
+                    <li class="etf-listing-arrow" aria-hidden="true">→</li>
+                    <li class="etf-listing-step build"><span>02</span><i class="fa-solid fa-layer-group" aria-hidden="true"></i><strong>펀드 구조 구성</strong><small>규약·자산구성·기준가 산정 방식을 마련합니다.</small></li>
+                    <li class="etf-listing-arrow" aria-hidden="true">→</li>
+                    <li class="etf-listing-step partner"><span>03</span><i class="fa-solid fa-handshake" aria-hidden="true"></i><strong><button type="button" class="etf-role-trigger visual-role-trigger" data-etf-role-modal="ap">AP</button>·<button type="button" class="etf-role-trigger visual-role-trigger" data-etf-role-modal="lp">LP</button> 역할 정하기</strong><small>큰 단위의 ETF를 만들고 바꾸는 <button type="button" class="etf-role-trigger visual-role-trigger" data-etf-role-modal="ap">AP</button>, 사고팔기 쉬운 호가를 내는 <button type="button" class="etf-role-trigger visual-role-trigger" data-etf-role-modal="lp">LP</button>를 정합니다.</small></li>
+                    <li class="etf-listing-arrow" aria-hidden="true">→</li>
+                    <li class="etf-listing-step review"><span>04</span><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i><strong>상장 신청·심사</strong><small>서류와 상장·유동성 요건을 확인합니다.</small></li>
+                    <li class="etf-listing-arrow" aria-hidden="true">→</li>
+                    <li class="etf-listing-step market"><span>05</span><i class="fa-solid fa-arrow-right-arrow-left" aria-hidden="true"></i><strong>발행·상장 후 관리</strong><small>거래, 설정·환매, 공시와 <button type="button" class="etf-role-trigger visual-role-trigger" data-etf-role-modal="lp">LP</button> 호가가 이어집니다.</small></li>
+                  </ol>
+                  <figcaption><b>한 줄로 보기:</b> 운용사가 상품을 설계하고 → <button type="button" class="etf-role-trigger" data-etf-role-modal="ap">AP</button>·<button type="button" class="etf-role-trigger" data-etf-role-modal="lp">LP</button> 등 시장 인프라를 갖추고 → 거래소 심사를 거쳐 → 투자자가 거래할 수 있는 ETF가 됩니다.</figcaption>
+                </figure>
+                <h3>단계별로 무엇을 준비하나요?</h3>
+                <div class="lesson-table-wrap">
+                  <table class="lesson-table">
+                    <thead><tr><th scope="col">단계</th><th scope="col">주체와 핵심 작업</th><th scope="col">투자자가 나중에 확인하는 자료</th></tr></thead>
+                    <tbody>
+                      <tr><th scope="row">1. 상품 설계</th><td>자산운용사가 기초지수·가격 또는 투자대상, 현물·파생상품 운용 방식, 보수와 주요 위험을 설계합니다. 지수를 쓰면 지수 권리자와 이용계약을 맺습니다.</td><td>투자설명서의 투자목적·기초지수·위험등급·파생상품 활용 여부</td></tr>
+                      <tr><th scope="row">2. 펀드 구조 구성</th><td>투자신탁 규약 또는 투자회사 정관, 신탁업자·일반사무관리회사와의 업무 구조, 설정·환매 및 자산구성내역(PDF) 방식을 마련합니다.</td><td>집합투자규약, PDF, 순자산가치(NAV) 산정 방식</td></tr>
+                      <tr><th scope="row">3. <button type="button" class="etf-role-trigger" data-etf-role-modal="ap">AP</button>·<button type="button" class="etf-role-trigger" data-etf-role-modal="lp">LP</button> 확보</th><td><button type="button" class="etf-role-trigger" data-etf-role-modal="ap">지정참가회사(AP)</button>는 큰 설정·환매 단위를 처리하고, <button type="button" class="etf-role-trigger" data-etf-role-modal="lp">LP</button>는 시장에서 매수·매도 호가를 제시해 유동성을 돕습니다. 국내 ETF 상장에는 <button type="button" class="etf-role-trigger" data-etf-role-modal="ap">AP</button> 1사 이상과 <button type="button" class="etf-role-trigger" data-etf-role-modal="lp">LP</button> 계약 1사 이상이 요구됩니다.</td><td>호가 스프레드·거래량·괴리율, <button type="button" class="etf-role-trigger" data-etf-role-modal="lp">LP</button> 현황</td></tr>
+                      <tr><th scope="row">4. 상장 신청·심사</th><td>운용사는 거래소에 상장심사 신청서, 투자설명서, 지수 이용·<button type="button" class="etf-role-trigger" data-etf-role-modal="ap">AP</button>·<button type="button" class="etf-role-trigger" data-etf-role-modal="lp">LP</button> 계약, 신탁계약·운용계획 등 관련 자료를 제출합니다. 거래소는 규모·발행좌수·유동성·자산구성 등 요건을 살핍니다.</td><td>상장일, 상장 안내, 투자설명서·공시</td></tr>
+                      <tr><th scope="row">5. 발행·상장 후 관리</th><td>ETF가 발행·상장되면 투자자는 증권사를 통해 장중 매매합니다. 운용사는 자산구성·기준가·공시를 관리하고, <button type="button" class="etf-role-trigger" data-etf-role-modal="ap">AP</button>·<button type="button" class="etf-role-trigger" data-etf-role-modal="lp">LP</button>는 설정·환매와 유동성 공급을 계속 수행합니다.</td><td>일일 PDF·NAV·iNAV, 운용보고서, 추적오차·괴리율</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="lesson-note"><b>상장요건 예시:</b> KRX의 국내 ETF 상장요건에는 신탁원본액(자본금) 70억 원 이상, 발행좌수 10만 좌 이상, 지정참가회사 1사 이상, 유동성공급계약 1사 이상 등이 포함됩니다. 지수 구성·자산구성 요건과 예외는 ETF 유형에 따라 달라지므로, 숫자만으로 상장 가능 여부를 단정하면 안 됩니다. <a href="https://listing.krx.co.kr/contents/LST/06/06010100/LST06010100.jsp" target="_blank" rel="noopener noreferrer">KRX ETF 상장요건</a>과 <a href="https://regulation.krx.co.kr/contents/RGL/03/03060106/RGL03060106.jsp" target="_blank" rel="noopener noreferrer">KRX ETF 발행제도</a>를 확인하세요.</p>
+              </div>
+            </div>
+            <button class="lesson-toggle" type="button" data-lesson-toggle aria-expanded="true" aria-label="ETF는 어떻게 거래소에 상장될까요 내용 접기" title="내용 접기"><span aria-hidden="true">⌃</span></button>
           </section>
           <section class="lesson">
             <span>11</span>
@@ -414,8 +530,8 @@
               <h2>개인대주와 신용융자: 무엇을 빌리는 거래인가요?</h2>
               <div class="lesson-body">
                 <p>
-                  레버리지 ETF는 운용사가 파생상품 등을 활용해 목표 노출을
-                  조절하는 상품입니다. 이와 달리 개인이 공매도를 위해 증권사에서
+                  레버리지 ETF는 운용사가 선물 같은 계약을 이용해, 지수가 움직일 때
+                  목표한 배수만큼 오르내리도록 관리하는 상품입니다. 이와 달리 개인이 공매도를 위해 증권사에서
                   주식을 빌리는 거래를 <strong>신용대주(개인대주)</strong>라고
                   합니다. 주식 대여 서비스에 동의한 다른 개인의 주식이 재원이 될
                   수는 있지만, 공매도 신청자가 특정 대여자를 지정해 1:1로 빌리는
@@ -536,6 +652,10 @@
                   필요는 없습니다.
                 </p>
                 <p class="lesson-video-cta">
+                  <button type="button" class="lesson-video-link" id="etfMarketActivityTrigger"><i class="fa-solid fa-chart-column"></i> ETF 시장 활동 대시보드 보기</button>
+                  <small>시장 규모·운용사 순위·대표 상품의 순자산 증가를 같은 화면에서 비교해 보세요.</small>
+                </p>
+                <p class="lesson-video-cta">
                   <button type="button" class="lesson-video-link" id="etfCatalogTrigger"><i class="fa-solid fa-table-list"></i> 전체 ETF 성과·편입종목 보기</button>
                   <small>8개 운용사 ETF의 최근 3개월 수익률과 기준일별 상위 편입종목을 검색해 보세요.</small>
                 </p>
@@ -568,6 +688,47 @@
                   현황, 차입금, 배당가능이익과 금리 민감도를, ETN은 발행사,
                   만기, 기초지수, 신용위험을 봅니다.
                 </p>
+                <p>일반 1배 ETF, 지수 레버리지 ETF, 단일종목 레버리지 ETF는 추종 대상(기초자산)과 <strong>배수(파생상품 활용 여부)</strong>, 그리고 이에 따른 <strong>위험 구조</strong>에서 명확한 차이가 납니다.</p>
+                <h3>ETF 유형별 비교</h3>
+                <div class="lesson-table-wrap">
+                  <table class="lesson-table">
+                    <thead><tr><th scope="col">구분</th><th scope="col">일반 1배 ETF</th><th scope="col">지수 레버리지 ETF (2배/3배)</th><th scope="col">단일종목 레버리지 ETF (1.5배/2배)</th></tr></thead>
+                    <tbody>
+                      <tr><th scope="row">대표 예시</th><td>KODEX 200, TIGER 미국S&amp;P500</td><td>KODEX 레버리지, TQQQ, SOXL</td><td>TSLL (테슬라 2배), NVDL (엔비디아 2배)</td></tr>
+                      <tr><th scope="row">기초자산</th><td>다수 종목으로 구성된 <strong>지수</strong></td><td>다수 종목으로 구성된 <strong>지수</strong></td><td><strong>단 1개 개별 기업 주식</strong></td></tr>
+                      <tr><th scope="row">추종 배수</th><td><strong>1배</strong> (지수 변동 그대로)</td><td><strong>2배 ~ 3배</strong></td><td><strong>1.5배 ~ 2배</strong></td></tr>
+                      <tr><th scope="row">주요 운용 방식</th><td>현물 주식 위주 매수</td><td>현물 + 지수선물/스왑 계약</td><td>현물/국채 담보 + 개별주식선물/스왑</td></tr>
+                      <tr><th scope="row">분산투자 효과</th><td><strong>높음</strong> (지수 내 다수 기업 분산)</td><td><strong>높음</strong> (지수 내 다수 기업 분산)</td><td><strong>없음</strong> (1개 기업에 100% 집중)</td></tr>
+                      <tr><th scope="row">변동성 위험</th><td>낮음~보통</td><td>높음</td><td><strong>극도로 높음</strong></td></tr>
+                      <tr><th scope="row">음의 복리 (음의 이격)</th><td>거의 없음 (장기투자 적합)</td><td>존재함 (횡보장 손실 발생)</td><td><strong>매우 심함</strong> (개별주 변동성이 커서 가치 침식 극대화)</td></tr>
+                      <tr><th scope="row">적합한 투자 기간</th><td><strong>장기 적립식 투자</strong></td><td><strong>단기~중기 방향성 매매</strong></td><td><strong>초단기(일간) 단타 및 헤지</strong></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <h3>주요 차점 및 특징</h3>
+                <h4>1. 일반 1배 ETF (지수 추종)</h4>
+                <ul>
+                  <li><strong>특징:</strong> S&amp;P500, 코스피200 등 시장 전체나 특정 산업 지수를 1배수 그대로 따라갑니다.</li>
+                  <li><strong>장점:</strong> 개별 기업 부도 위험이 없고, 시장 전체의 성장에 장기 투자하기 가장 안정적입니다.</li>
+                </ul>
+                <h4>2. 지수 레버리지 ETF (2배/3배)</h4>
+                <ul>
+                  <li><strong>특징:</strong> 지수의 일간 변동률을 2배 또는 3배로 추종합니다.</li>
+                  <li><strong>위험 요소:</strong> 여러 종목에 분산되어 있어 개별 기업의 벼락 악재는 피할 수 있지만, 지수가 제자리에서 오르내리는 <strong>횡보장</strong>을 보일 경우 매일 이뤄지는 일일 리밸런싱 때문에 음의 복리 효과(Volatility Drag)로 원금이 깎여 나갑니다.</li>
+                </ul>
+                <h4>3. 단일종목 레버리지 ETF (1.5배/2배)</h4>
+                <ul>
+                  <li><strong>특징:</strong> 단 1개 기업(예: 테슬라, 엔비디아, 삼성전자 등)의 일간 수익률을 1.5배~2배로 추종합니다.</li>
+                  <li><strong>위험 요소:</strong><ul><li><strong>분산 효과 제로:</strong> 개별 주식 자체의 변동성이 지수보다 훨씬 큰데, 여기에 레버리지까지 더해져 <strong>하루 만에 +-10~20% 이상 폭등·폭락</strong>할 수 있습니다.</li><li><strong>극심한 음의 복리:</strong> 주가의 오르내림이 극심하므로, 주가가 제자리로 돌아오더라도 ETF 가격은 상당 부분 파손될 위험이 매우 큽니다.</li></ul></li>
+                </ul>
+                <blockquote>
+                  <p><strong>요약</strong></p>
+                  <ul>
+                    <li><strong>1배 ETF:</strong> 장기 우상향을 믿고 묻어두는 <strong>안전한 모으기용</strong></li>
+                    <li><strong>지수 레버리지 ETF:</strong> 시장의 단기 트렌드나 반등을 노리는 <strong>전략적 투자용</strong></li>
+                    <li><strong>단일종목 레버리지 ETF:</strong> 개별 주식의 강한 모멘텀을 이용해 당일 손익을 극대화하는 <strong>초고위험 단기 매매용</strong></li>
+                  </ul>
+                </blockquote>
                 <h3>ETF의 투자위험등급: 1~6등급은 어떻게 읽을까요?</h3>
                 <p>금융투자협회의 표준투자권유준칙은 투자성 상품 위험도를 <strong>1등급(매우 높은 위험)부터 6등급(매우 낮은 위험)</strong>까지 구분하는 기준을 제시합니다. 다만 모든 ETF가 같은 자산군이면 같은 등급을 받는 것은 아닙니다. 운용사·판매사는 기초자산, 변동성, 파생상품 활용, 환율·신용 위험 등을 반영해 상품별 위험등급을 정하므로, 최종 등급은 투자설명서와 판매 화면에서 확인해야 합니다.</p>
                 <div class="lesson-table-wrap">
@@ -641,6 +802,54 @@
                 <h3>단일종목 레버리지 상품은 왜 가능한가요?</h3>
                 <p>국내에서는 분산투자 요건 때문에 단일종목 레버리지·인버스 상품이 오랫동안 허용되지 않았지만, 2026년 제도 개선 후 일정 요건을 충족한 국내 우량주를 기초로 한 단일종목 레버리지·인버스 <strong>ETF·ETN</strong>이 상장 심사를 거쳐 도입됐습니다. 금융위원회가 안내한 초기 대상에는 삼성전자와 SK하이닉스가 포함됐고, 일간 수익률의 ±2배 이내를 추종하는 구조입니다.</p>
                 <p>따라서 <strong>SK하이닉스 단일종목 레버리지 상품이 ‘10% 규정을 피해 현물은 10%만, 나머지는 스왑 90%’로 운용된다고 일반화할 수는 없습니다.</strong> 상품마다 현물·개별주식선물·스왑·현금성 자산의 조합이 다르고, 실제 편입 비중도 매일 바뀔 수 있습니다. 해당 ETF 또는 ETN의 투자설명서, 자산구성내역(PDF), 일일 기준가격 공시에서 실제 익스포저와 파생상품 사용 여부를 확인하세요.</p>
+                <p>금융에서 레버리지 ETF의 ‘200% 노출(Exposure)’이란, ‘내가 ETF에 넣은 투자 원금의 2배에 달하는 실제 주식 금액을 사들인 것과 동일한 효과를 내도록 파생상품 포지션을 구성했다’는 뜻입니다.</p>
+                <p>예를 들어, 삼성전자 2배 레버리지 ETF에 <strong>100만 원</strong>을 투자했을 때 ETF 운용사는 다음과 같이 포지션을 잡습니다.</p>
+                <h3>100만 원 투자 시 포지션 구성 예시</h3>
+                <ul>
+                  <li><strong>실제 내 원금:</strong> 100만 원</li>
+                  <li><strong>목표 노출 비율:</strong> 200% (2배)</li>
+                  <li><strong>실제 운용 규모:</strong> <strong>200만 원 상당의 삼성전자 주식 가치</strong></li>
+                </ul>
+                <p>이 200만 원을 채우기 위해 운용사는 현물 주식 80만 원(80%)과 주식선물 120만 원(120%)을 합쳐 총 200만 원(200%)치 손익에 노출되도록 맞춥니다.</p>
+                <h3>왜 200% 노출이라고 부를까?</h3>
+                <div class="lesson-table-wrap">
+                  <table class="lesson-table">
+                    <thead><tr><th scope="col">구분</th><th scope="col">일반 삼성전자 ETF (1배)</th><th scope="col">삼성전자 2배 레버리지 ETF</th></tr></thead>
+                    <tbody>
+                      <tr><th scope="row">투자 원금</th><td>100만 원</td><td><strong>100만 원</strong></td></tr>
+                      <tr><th scope="row">실제 주식 노출액</th><td>100만 원 (100%)</td><td><strong>200만 원 (200%)</strong></td></tr>
+                      <tr><th scope="row">주가 5% 상승 시</th><td>+5만 원 이익 (<strong>+5%</strong>)</td><td><strong>+10만 원 이익 (+10%)</strong></td></tr>
+                      <tr><th scope="row">주가 5% 하락 시</th><td>-5만 원 손실 (<strong>-5%</strong>)</td><td><strong>-10만 원 손실 (-10%)</strong></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <h3>핵심 정리</h3>
+                <p>파생상품(주식선물, 스왑 등)은 <strong>원금의 일부만 증거금으로 내고도 더 큰 액수의 주식을 계약</strong>할 수 있는 성질이 있습니다.</p>
+                <p>따라서 200% 노출이란 "내 원금은 100만 원이지만, 금융공학(파생상품)을 써서 200만 원어치 주식을 들고 있는 것과 똑같은 손익 움직임을 만들어냈다"는 의미입니다.</p>
+                <p>2026년 국내 증시에 상장된 <strong>삼성전자 단일종목 2배 레버리지 ETF</strong>(KODEX, TIGER, ACE, PLUS 등)는 삼성전자 주식 현물 약 70~90% + 삼성전자 개별주식선물(파생상품) 약 80~110% + 원화예금(현금성 자산)으로 구성되어 있습니다.</p>
+                <h3>실제 자산 구성 방식 (포트폴리오 예시)</h3>
+                <p>대표적인 상품인 <strong>KODEX 삼성전자단일종목레버리지</strong>나 <strong>PLUS·ACE 단일종목레버리지</strong>의 자산 구성(PDF)을 살펴보면 아래와 같은 비중으로 운용됩니다.</p>
+                <div class="lesson-table-wrap">
+                  <table class="lesson-table">
+                    <thead><tr><th scope="col">구성 자산</th><th scope="col">실제 보유 비중</th><th scope="col">역할 및 특징</th></tr></thead>
+                    <tbody>
+                      <tr><th scope="row">삼성전자 현물 주식</th><td><strong>약 70% ~ 90%</strong></td><td>기초자산의 기본 1배수 노출(Exposure)을 담당</td></tr>
+                      <tr><th scope="row">삼성전자 주식선물 (파생)</th><td><strong>약 80% ~ 110%</strong></td><td>부족한 1배수 이상의 노출을 채워 <strong>총 200%(2배) 노출</strong> 달성</td></tr>
+                      <tr><th scope="row">원화 예금 및 현금성 자산</th><td><strong>약 5% ~ 10%</strong></td><td>주식선물 매매를 위한 위탁증거금 및 리밸런싱용 현금</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p><em>(※ 합계 노출액이 약 200%가 되도록 매일 장 마감 시점에 리밸런싱을 수행합니다.)</em></p>
+                <h3>국내 단일종목 레버리지 ETF의 2가지 운용 방식</h3>
+                <p>국내 상장 상품은 자산운용사에 따라 크게 두 가지 방식으로 나뉩니다.</p>
+                <ol>
+                  <li><strong>현물 주식 + 주식선물 혼합 방식 (가장 대표적)</strong><ul><li><strong>해당 상품:</strong> KODEX, TIGER, ACE, RISE, PLUS 등의 단일종목 레버리지</li><li><strong>구조:</strong> 삼성전자 현물 주식을 대량 사들이고, 모자라는 배수(약 1배)는 장내 <strong>삼성전자 개별주식선물</strong>을 매수하여 2배 노출을 만듭니다.</li><li><strong>장점:</strong> 현물 비중이 높아 발행 및 환매 시 거래세 절감 효과가 있습니다.</li></ul></li>
+                  <li><strong>순수 선물 추종 방식</strong><ul><li><strong>해당 상품:</strong> KIWOOM, 1Q 선물단일종목레버리지 등</li><li><strong>구조:</strong> 현물 주식 대신 <strong>삼성전자 주식선물</strong> 포지션만으로 2배 노출을 구성하고, 남은 현금은 단기 채권이나 예금에 넣어 이자 수익을 얻습니다.</li></ul></li>
+                </ol>
+                <blockquote>
+                  <p><strong>요약</strong></p>
+                  <p>한국의 삼성전자 단일종목 레버리지 ETF는 현물을 안 담거나 고정 비율로 제한하는 것이 아니라, <strong>삼성전자 진짜 주식을 약 80%가량 사고, 부족한 나머지 120%만큼을 삼성전자 주식선물로 채워서 매일 2배의 손익 움직임(총 200% 노출)</strong>을 구현하는 구조입니다.</p>
+                </blockquote>
                 <p>단일종목 레버리지 상품은 분산 효과가 거의 없고, 일일 목표수익률 구조 때문에 장기 누적성과가 단순 배수와 달라질 수 있습니다. 일반 ETF보다 높은 변동성, 음의 복리효과, 괴리율, 파생상품·거래상대방 위험을 함께 고려해야 합니다.</p>
                 <p><small>참고: <a href="https://law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1025079481" target="_blank" rel="noopener noreferrer">자본시장법 시행령 제80조</a>, <a href="https://www.fsc.go.kr/no010101/86910" target="_blank" rel="noopener noreferrer">금융위원회 단일종목 레버리지·인버스 상품 도입 안내</a>, <a href="https://www.fsc.go.kr/no010101/86973?curPage=16" target="_blank" rel="noopener noreferrer">금융위원회 투자자 보호 보완 안내</a>.</small></p>
               </div>
@@ -911,6 +1120,24 @@
                     </tbody>
                   </table>
                 </div>
+                <h3>직무별로 보는 자격·등록의 차이: 운용 · 판매 · 감독 · 연구</h3>
+                <p>같은 금융 분야라도 <b>펀드 운용</b>, <b>보험·투자상품 판매와 상담</b>, <b>금융당국의 정책·감독</b>, <b>연구기관의 분석</b>은 필요한 자격의 성격이 다릅니다. 아래의 ‘필수’는 해당 업무를 실제로 수행할 때의 등록·시험 요건을 뜻하며, 입사 지원 단계에서 모든 자격을 먼저 갖춰야 한다는 뜻은 아닙니다. 채용·등록 요건은 회사와 공고, 담당 업무에 따라 달라집니다.</p>
+                <div class="lesson-table-wrap">
+                  <table class="lesson-table">
+                    <caption>금융 직무별 자격·등록·채용 경로 구분</caption>
+                    <thead><tr><th scope="col">직무 분야</th><th scope="col">대표 업무</th><th scope="col">업무 수행 시 자격·등록</th><th scope="col">도움이 되는 준비</th></tr></thead>
+                    <tbody>
+                      <tr><th scope="row">펀드·ETF 운용직</th><td>집합투자재산 운용, 리밸런싱, 리서치</td><td><b>투자자산운용사</b>는 집합투자재산 운용 전문인력 등록의 핵심 요건입니다.</td><td>회계·재무, 통계·Python·SQL, CFA·FRM 등은 직무와 회사에 따라 활용됩니다.</td></tr>
+                      <tr><th scope="row">펀드·증권 투자상담·판매직</th><td>고객 성향 확인, 상품 설명, 투자권유·자문, 사후 관리</td><td>상품 범위에 맞는 <b>펀드·증권·파생상품 투자권유자문인력</b> 또는 <b>투자권유대행인</b> 자격과 회사·협회 등록이 필요할 수 있습니다.</td><td>AFPK·CFP는 재무설계 역량을 보여 주는 민간자격입니다. 자격만으로 모든 상품의 판매 권한이 생기지는 않습니다.</td></tr>
+                      <tr><th scope="row">보험 판매·상담직</th><td>보험계약 모집, 보장 분석, 계약 유지·사후 관리</td><td><b>보험설계사·보험대리점·보험중개사</b>는 관련 시험, 등록교육 및 소속·등록 절차를 거쳐 모집 업무를 수행합니다.</td><td>보험상품 구조·소비자보호·윤리 교육이 중요하며, 손해사정사·보험계리사는 판매직이 아닌 별도 전문 직무입니다.</td></tr>
+                      <tr><th scope="row">은행 PB·WM 상담직</th><td>예금·대출·신탁·펀드·퇴직연금 등 자산관리 상담</td><td>판매·권유하는 상품에 따라 각각의 투자권유 전문인력 등록 또는 보험 모집 등록이 적용될 수 있습니다.</td><td>AFPK·CFP, 세무·부동산·상속 지식은 상담 범위에 따라 활용됩니다. 법률·세무 업무의 독점 자격과는 구분해야 합니다.</td></tr>
+                      <tr><th scope="row">금융감독원(FSS) 감독·검사·분석직</th><td>금융회사 감독·검사, 소비자보호, 공시·시장 분석, 제도 집행</td><td>직무 공통의 단일 ‘감독원 자격증’은 없습니다. 공개채용·경력채용 요건과 내부 직무 교육에 따릅니다.</td><td>경제·경영·법·회계·통계·IT 보안 등 직무별 전공과 분석 능력이 중요합니다. CPA·변호사·계리사 등은 일부 전문 분야에서 강점이 될 수 있습니다.</td></tr>
+                      <tr><th scope="row">금융위원회(FSC) 정책·제도 직무</th><td>금융정책·법령·인가·제도 개선, 국제금융 협력</td><td>금융위는 연구원 자격으로 일괄 채용하는 기관이 아니라 공무원·전문임기제·민간전문가 등 공고별 채용 체계가 적용됩니다.</td><td>경제·금융·법·행정·국제 업무 경험, 정책 보고서 작성과 데이터 분석 역량을 공고별로 확인합니다.</td></tr>
+                      <tr><th scope="row">금융 연구기관 연구직</th><td>금융시장·가계부채·자본시장·보험 제도 분석, 정책 연구</td><td>자격증 등록이 법정 필수인 직무는 보통 아닙니다. 석사·박사 학위, 연구 실적, 계량분석 역량을 요구하거나 우대하는 공고가 많습니다.</td><td>경제학·금융공학·통계·계량경제, R·Python·SQL, 논문·보고서 작성 경험이 중심입니다.</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="lesson-note"><b>판매와 연구를 혼동하지 않기:</b> 투자권유 자격은 고객에게 금융투자상품을 권유·자문하는 업무와 연결되고, 보험 모집 등록은 보험계약을 모집하는 업무와 연결됩니다. 반면 금융위·금감원 및 금융 연구기관의 정책·감독·분석 업무는 해당 자격 하나로 대체되지 않으며, 채용 공고의 전공·경력·직무 역량을 따로 확인해야 합니다. <a href="https://license.kofia.or.kr/resources/etc/PLIO.pdf" target="_blank" rel="noopener noreferrer">금융투자협회 자격 안내</a>, <a href="https://www.in.or.kr/" target="_blank" rel="noopener noreferrer">보험연수원 모집종사자 안내</a>, <a href="https://www.fsc.go.kr/no010104" target="_blank" rel="noopener noreferrer">금융위원회 채용 공고</a>를 참고하세요.</p>
                 <h3>금융업 안의 IT 직군: 자격증·직업군·필요 기술</h3>
                 <p>
                   같은 금융업이라도 상품을 팔거나 운용하는 인력과 별도로,
@@ -1308,7 +1535,7 @@
               </dd>
               <dd>
                 만기가 정해져 있어 만기 시 지표가치로 정산되거나 조기청산·상장폐지
-                조건이 발생할 수 있고, 유동성공급자(LP)의 호가에 따라 시장가격과
+                조건이 발생할 수 있고, <button type="button" class="etf-role-trigger" data-etf-role-modal="lp">유동성공급자(LP)</button>의 호가에 따라 시장가격과
                 지표가치(괴리율)가 벌어질 수 있습니다. 매수 전에는 발행사의
                 신용등급, 만기일, 조기청산 요건과 유동성을 함께 확인하세요.
               </dd>
@@ -1594,6 +1821,19 @@
                 미지급금을 뜻합니다. ETF 1주에 담긴 자산의 값이라고 생각할 수
                 있으며, 시장에서 거래되는 ETF 가격이 NAV와 다르면 괴리율이
                 생깁니다.
+                <br /><br />
+                <strong>숫자로 보는 예시:</strong> 가상의 국내 주식 ETF가 주식 10억 원과
+                현금 500만 원을 보유하고, 아직 내지 않은 보수·결제대금이 100만 원이며,
+                ETF가 10만 주 발행되어 있다고 가정해 보겠습니다. 순자산은
+                <strong>10억 400만 원</strong>(10억 원 + 500만 원 − 100만 원)이고,
+                1주당 NAV는 <strong>10,040원</strong>입니다. 장중 매수 수요로 이 ETF가
+                10,150원에 거래되면, 투자자는 ETF 속 자산가치보다 110원 높은 가격에
+                거래하는 것이며 괴리율은 약 <strong>+1.10%</strong>입니다.
+                <br /><br />
+                <strong>실제로 확인하는 곳:</strong> 운용사는 매 영업일 장 마감 뒤 확정
+                NAV와 ETF가 담은 자산구성내역(PDF)을 공시합니다. 장중에는 iNAV를 함께
+                보고 시장가격·매수/매도 호가와 비교하면, 지금의 거래가격이 ETF 속
+                자산가치에서 얼마나 떨어져 있는지 가늠할 수 있습니다.
               </dd>
             </div>
             <div class="glossary-item" data-glossary-manual-only>
@@ -1729,6 +1969,43 @@
       </footer>
     </main>
 
+    <div class="glossary-modal etf-role-modal" id="etfRoleModal" hidden>
+      <div class="glossary-modal__backdrop" data-etf-role-close></div>
+      <section class="glossary-modal__dialog etf-role-dialog" role="dialog" aria-modal="true" aria-labelledby="etfRoleTitle">
+        <button class="glossary-modal__close" type="button" aria-label="닫기" data-etf-role-close>×</button>
+        <p class="etf-role-kicker" id="etfRoleKicker">ETF 시장의 뒤편 역할</p>
+        <h2 id="etfRoleTitle"></h2>
+        <p class="etf-role-lead" id="etfRoleLead"></p>
+        <div class="etf-role-picture" id="etfRolePicture" aria-hidden="true"></div>
+        <div class="etf-role-points" id="etfRolePoints"></div>
+        <p class="etf-role-note" id="etfRoleNote"></p>
+        <section class="etf-role-ap-detail" aria-label="AP와 LP의 역할 자세히 보기">
+          <p><strong>AP</strong>는 파생결합증권 및 ETF 시장에서 <strong>Authorized Participant</strong>의 약자입니다. 한국어로는 <strong>지정참가회사</strong>라고 부릅니다.</p>
+          <h3>지정참가회사(Authorized Participant)의 핵심 역할</h3>
+          <p>ETF 시장에서 AP는 주로 <strong>증권사</strong>가 맡으며, ETF의 실물 발행과 청산(수량 조절)을 담당하는 시장의 핵심 플레이어입니다.</p>
+          <ol>
+            <li><strong>ETF의 생성과 소멸(발행과 청산)</strong>
+              <ul>
+                <li><strong>주식 → ETF 변환 (발행):</strong> AP는 시장에서 ETF의 바탕이 되는 주식들(기초자산 바스켓)을 직접 사들인 뒤, 자산운용사에 넘겨 새로운 ETF 증권을 만들어냅니다.</li>
+                <li><strong>ETF → 주식 변환 (청산):</strong> 반대로 ETF를 수거하여 자산운용사에 반납하고 실물 주식으로 되돌려 받습니다.</li>
+              </ul>
+            </li>
+            <li><strong>차익거래를 통한 가격 차이 해소 (괴리율 조절)</strong>
+              <ul>
+                <li>ETF의 시장 거래 가격이 ETF의 실제 가치(순자산가치, NAV)보다 너무 비싸지거나 싸지면, AP가 주식과 ETF 간의 차익거래를 실행하여 <strong>시장 가격이 원래 가치에 맞게 유지되도록</strong> 만듭니다.</li>
+              </ul>
+            </li>
+          </ol>
+          <h3>관련 용어: LP(Liquidity Provider, 유동성공급자)와의 차이</h3>
+          <ul>
+            <li><strong>AP (지정참가회사):</strong> ETF를 <strong>만들거나 없애는(발행/청산)</strong> 도매상 역할</li>
+            <li><strong>LP (유동성공급자):</strong> 투자자들이 언제든 사고팔 수 있도록 호가창에 <strong>매수/매도 주문을 대어주는</strong> 소매상 역할 (보통 AP 역할을 하는 증권사가 LP 역할도 함께 겸하는 경우가 많습니다.)</li>
+          </ul>
+        </section>
+        <p class="etf-role-source"><a href="https://regulation.krx.co.kr/contents/RGL/03/03060106/RGL03060106.jsp" target="_blank" rel="noopener noreferrer">KRX ETF 발행제도</a> · <a href="https://global.krx.co.kr/contents/GLB/06/0605/0605010102/GLB0605010102.jsp" target="_blank" rel="noopener noreferrer">KRX LP 제도 안내</a></p>
+      </section>
+    </div>
+
     <div class="glossary-modal bis-capital-modal" id="bisCapitalModal" hidden>
       <div class="glossary-modal__backdrop" data-bis-capital-close></div>
       <section class="glossary-modal__dialog bis-capital-dialog" role="dialog" aria-modal="true" aria-labelledby="bisCapitalTitle">
@@ -1802,6 +2079,47 @@
         <section class="fund-etf-compare-chart-wrap"><div><strong>레버리지·인버스2X ETF 월별 합산 거래대금</strong><small>단위: 조 원 · 막대 라벨은 최근 12개월 합산 대비 비중</small></div><div id="leverageEtfVolumeChart" role="img" aria-label="레버리지 ETF 최근 1년 월별 거래대금과 최근 12개월 합산 대비 비중 차트"></div></section>
         <div class="leverage-etf-volume-summary" id="leverageEtfVolumeSummary" aria-live="polite"></div>
         <p class="leverage-etf-volume-note" id="leverageEtfVolumeNote">여기서 비중의 분모는 이 차트에 포함된 KODEX 레버리지와 KODEX 200선물인버스2X, 두 ETF의 최근 12개월 합산 거래대금입니다. 국내 전체 ETF 시장 또는 주식시장 거래대금 대비 비중은 아닙니다. 거래대금이 늘었다는 것이 상승·하락 방향을 뜻하지는 않습니다. 변동성이 커지는 구간에서는 레버리지·인버스 상품 모두 거래가 함께 늘어나는 경우가 많으므로, 방향이 아니라 시장 관심도·변동성 신호로 참고하세요.</p>
+      </section>
+    </div>
+
+    <div class="glossary-modal etf-market-activity-modal" id="etfMarketActivityModal" hidden>
+      <div class="glossary-modal__backdrop" data-etf-market-activity-close></div>
+      <section class="glossary-modal__dialog etf-market-activity-dialog" role="dialog" aria-modal="true" aria-labelledby="etfMarketActivityTitle">
+        <button class="glossary-modal__close" type="button" aria-label="닫기" data-etf-market-activity-close>×</button>
+        <h2 id="etfMarketActivityTitle">국내 ETF 시장 활동 대시보드</h2>
+        <p class="etf-market-activity-intro"><b>2026년 6월 말 공개 집계 기준</b>으로 시장의 크기와 자금이 늘어난 곳을 읽는 학습용 화면입니다. 순자산 규모, 최근 증가액, 거래대금은 서로 다른 지표이므로 같은 순위로 섞어 해석하지 않습니다.</p>
+        <div class="etf-market-summary">
+          <article><span>국내 ETF 순자산</span><strong>512.4조 원</strong><small>전월보다 약 5.1조 원 증가</small></article>
+          <article><span>상반기 개인 순매수</span><strong>61.91조 원</strong><small>시장 참여 흐름을 보여 주는 지표</small></article>
+          <article><span>상위 2개 운용사 비중</span><strong>70.1%</strong><small>삼성 39.18% + 미래에셋 30.96%</small></article>
+        </div>
+        <div class="market-size-tabs etf-market-tabs" role="tablist" aria-label="ETF 시장 지표 선택">
+          <button class="market-size-tab active" type="button" data-etf-market-tab="manager" role="tab" aria-selected="true">운용사·브랜드 순위</button>
+          <button class="market-size-tab" type="button" data-etf-market-tab="product" role="tab" aria-selected="false">ETF 상품 성장 순위</button>
+          <button class="market-size-tab" type="button" data-etf-market-tab="broker" role="tab" aria-selected="false">증권사와 거래 화면</button>
+        </div>
+        <section class="etf-market-panel" data-etf-market-panel="manager">
+          <div class="etf-market-panel-head"><div><h3>운용사 ETF 순자산 순위</h3><p>브랜드 앞글자는 보통 이 순위의 <b>자산운용사</b>를 나타냅니다.</p></div><span class="etf-market-badge">순자산 기준</span></div>
+          <div id="etfManagerActivityChart" class="etf-market-chart" aria-label="운용사 ETF 순자산 막대 차트"></div>
+          <div class="etf-market-rank-grid">
+            <article><b>1</b><span>KODEX · 삼성자산운용</span><strong>200.8조 원</strong><small>39.18%</small></article>
+            <article><b>2</b><span>TIGER · 미래에셋자산운용</span><strong>158.7조 원</strong><small>30.96%</small></article>
+            <article><b>3</b><span>RISE · KB자산운용</span><strong>37.8조 원</strong><small>7.38%</small></article>
+            <article><b>4</b><span>ACE · 한국투자신탁운용</span><strong>36.5조 원</strong><small>7.11%</small></article>
+            <article><b>5</b><span>SOL · 신한자산운용</span><strong>26.3조 원</strong><small>5.14%</small></article>
+          </div>
+        </section>
+        <section class="etf-market-panel" data-etf-market-panel="product" hidden>
+          <div class="etf-market-panel-head"><div><h3>최근 6개월 순자산 증가 상위 사례</h3><p>순자산 <b>증가액</b>은 규모·거래량·수익률과 다른 활동 지표입니다.</p></div><span class="etf-market-badge warm">증가액 기준</span></div>
+          <div id="etfProductActivityChart" class="etf-market-chart" aria-label="ETF 순자산 증가액 막대 차트"></div>
+          <p class="etf-market-reading"><b>읽는 법:</b> 이 화면은 “최근 자금이 크게 늘어난 상품”을 비교합니다. 늘어난 이유에는 설정·환매, 시장 가격 변화, 분배금 등 여러 요소가 함께 작용할 수 있으므로, 이것만으로 상품의 좋고 나쁨을 판단하지 않습니다.</p>
+        </section>
+        <section class="etf-market-panel" data-etf-market-panel="broker" hidden>
+          <div class="etf-market-panel-head"><div><h3>증권사 랭킹은 왜 별도로 봐야 할까요?</h3><p>ETF의 순자산과 브랜드 순위는 <b>운용사</b> 기준입니다.</p></div><span class="etf-market-badge neutral">중개 역할</span></div>
+          <div class="etf-broker-flow"><article><i class="fa-solid fa-building-columns"></i><b>자산운용사</b><span>ETF를 설계·운용하고 브랜드를 붙입니다.</span></article><i class="fa-solid fa-arrow-right-long"></i><article><i class="fa-solid fa-chart-line"></i><b>거래소</b><span>ETF가 상장되어 호가와 체결이 이뤄집니다.</span></article><i class="fa-solid fa-arrow-right-long"></i><article><i class="fa-solid fa-mobile-screen-button"></i><b>증권사</b><span>투자자의 주문을 중개하는 거래 창구입니다.</span></article></div>
+          <div class="etf-broker-note"><b>핵심:</b> 공개된 ETF 순자산만으로는 증권사별 고객 주문·점유율의 공통 순위를 만들 수 없습니다. 증권사 앱의 화면 순위나 자체 고객 거래대금은 각사 기준이 다를 수 있습니다. 따라서 이 교육 화면에서는 증권사 이름을 ETF 브랜드 순위처럼 나열하지 않고, <b>운용사 규모 · 상품 증가 · 거래대금</b>을 분리해 비교합니다.</div>
+        </section>
+        <p class="etf-market-source">출처: <a href="https://www.imaeil.com/page/view/2026071510122342312" target="_blank" rel="noopener noreferrer">ETF체크 인용 국내 ETF 시장 집계(2026. 6월 말)</a>, <a href="https://www.hankyung.com/article/202607019484i" target="_blank" rel="noopener noreferrer">운용사별 순자산·점유율 기사</a>. 이후 수치는 변동될 수 있으므로 실제 분석 시 KRX와 운용사 공시를 다시 확인하세요.</p>
       </section>
     </div>
 
@@ -1883,21 +2201,21 @@
       <section class="glossary-modal__dialog ai-top-picks-dialog" role="dialog" aria-modal="true" aria-labelledby="aiTopPicksTitle">
         <button class="glossary-modal__close" type="button" aria-label="닫기" data-ai-top-picks-close>×</button>
         <h2 id="aiTopPicksTitle">AI 추천 상품 TOP 5 (학습용 예시)</h2>
-        <p class="ai-top-picks-intro">기초지수·총보수·최근 3개월 수익률·거래량·괴리율·위험도 등 상품설명서 비교 항목을 기준으로 구성한 <strong>학습용 예시</strong>입니다. 특정 상품의 매수를 권유하는 투자 추천이 아니며, 실제 선택은 최신 상품설명서·투자설명서와 본인의 투자 목적·위험 감수 수준에 따라 판단하세요.</p>
+        <p class="ai-top-picks-intro">기초지수·총보수·최근 1개월·3개월 수익률·거래량·괴리율·위험도 등 상품설명서 비교 항목을 기준으로 구성한 <strong>학습용 예시</strong>입니다. 특정 상품의 매수를 권유하는 투자 추천이 아니며, 실제 선택은 최신 상품설명서·투자설명서와 본인의 투자 목적·위험 감수 수준에 따라 판단하세요.</p>
         <div class="lesson-table-wrap">
           <table class="lesson-table">
-            <caption>비교 항목 기준 예시 순위 · 최근 3개월 수익률 <span id="aiTopPicksReturnAsOf">2026-09-05 조회 기준</span> — 실제 수치는 시점에 따라 달라지므로 매수 전 다시 확인하세요.</caption>
-            <thead><tr><th scope="col">순위</th><th scope="col">상품명 (예시)</th><th scope="col">기초지수</th><th scope="col">총보수(연)</th><th scope="col">최근 3개월 수익률</th><th scope="col">비교 항목 특징</th></tr></thead>
+            <caption>비교 항목 기준 예시 순위 · 최근 1개월·3개월 수익률 <span id="aiTopPicksReturnAsOf">2026-09-05 조회 기준</span> — 실제 수치는 시점에 따라 달라지므로 매수 전 다시 확인하세요.</caption>
+            <thead><tr><th scope="col">순위</th><th scope="col">상품명 (예시)</th><th scope="col">기초지수</th><th scope="col">총보수(연)</th><th scope="col">최근 1개월 수익률</th><th scope="col">최근 3개월 수익률</th><th scope="col">비교 항목 특징</th></tr></thead>
             <tbody>
-              <tr><th scope="row">1</th><td>KODEX 200</td><td>코스피 200</td><td>약 0.15%</td><td class="negative" data-ai-return-code="069500">-23.64%</td><td>순자산 규모가 크고 거래량이 많아 호가 차이·괴리율이 작은 편입니다.</td></tr>
-              <tr><th scope="row">2</th><td>TIGER 200</td><td>코스피 200</td><td>약 0.05%</td><td class="negative" data-ai-return-code="102110">-23.58%</td><td>동일 지수 추종 상품 중 총보수가 낮아 장기 보유 비용 부담이 작습니다.</td></tr>
-              <tr><th scope="row">3</th><td>KODEX 코스닥150</td><td>코스닥 150</td><td>약 0.25%</td><td class="negative" data-ai-return-code="229200">-25.58%</td><td>중소형 성장주 비중이 높아 변동성과 기대수익이 함께 커질 수 있습니다.</td></tr>
-              <tr><th scope="row">4</th><td>ACE 미국S&amp;P500</td><td>S&amp;P 500</td><td>약 0.07%</td><td class="negative" data-ai-return-code="360200">-8.96%</td><td>해외 대표지수 분산 효과가 있으나 환노출·환헤지 여부를 확인해야 합니다.</td></tr>
-              <tr><th scope="row">5</th><td>TIGER 미국나스닥100</td><td>나스닥 100</td><td>약 0.07%</td><td class="negative" data-ai-return-code="133690">-14.06%</td><td>기술주 비중이 높아 변동성이 크고, 성장 기대와 위험이 함께 커집니다.</td></tr>
+              <tr><th scope="row">1</th><td>KODEX 200</td><td>코스피 200</td><td>약 0.15%</td><td data-ai-return-code="069500" data-ai-return-period="1m">조회 중…</td><td class="negative" data-ai-return-code="069500" data-ai-return-period="3m">-23.64%</td><td>순자산 규모가 크고 거래량이 많아 호가 차이·괴리율이 작은 편입니다.</td></tr>
+              <tr><th scope="row">2</th><td>TIGER 200</td><td>코스피 200</td><td>약 0.05%</td><td data-ai-return-code="102110" data-ai-return-period="1m">조회 중…</td><td class="negative" data-ai-return-code="102110" data-ai-return-period="3m">-23.58%</td><td>동일 지수 추종 상품 중 총보수가 낮아 장기 보유 비용 부담이 작습니다.</td></tr>
+              <tr><th scope="row">3</th><td>KODEX 코스닥150</td><td>코스닥 150</td><td>약 0.25%</td><td data-ai-return-code="229200" data-ai-return-period="1m">조회 중…</td><td class="negative" data-ai-return-code="229200" data-ai-return-period="3m">-25.58%</td><td>중소형 성장주 비중이 높아 변동성과 기대수익이 함께 커질 수 있습니다.</td></tr>
+              <tr><th scope="row">4</th><td>ACE 미국S&amp;P500</td><td>S&amp;P 500</td><td>약 0.07%</td><td data-ai-return-code="360200" data-ai-return-period="1m">조회 중…</td><td class="negative" data-ai-return-code="360200" data-ai-return-period="3m">-8.96%</td><td>해외 대표지수 분산 효과가 있으나 환노출·환헤지 여부를 확인해야 합니다.</td></tr>
+              <tr><th scope="row">5</th><td>TIGER 미국나스닥100</td><td>나스닥 100</td><td>약 0.07%</td><td data-ai-return-code="133690" data-ai-return-period="1m">조회 중…</td><td class="negative" data-ai-return-code="133690" data-ai-return-period="3m">-14.06%</td><td>기술주 비중이 높아 변동성이 크고, 성장 기대와 위험이 함께 커집니다.</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="ai-top-picks-note">최근 3개월 수익률은 공개 ETF 시세 목록의 조회 시점 값이며 미래 성과를 보장하지 않습니다. 이 목록은 비교 항목을 익히기 위한 예시 구성이며, 실제 총보수·수익률·거래량·괴리율·순위는 시장 상황과 조회 시점에 따라 달라집니다. 매수 전에는 반드시 최신 상품설명서·투자설명서와 실시간 시세를 확인하세요.</p>
+        <p class="ai-top-picks-note">최근 1개월 수익률은 목록 기준일에서 한 달 전부터 계산하고, 최근 3개월 수익률은 공개 ETF 시세 목록의 조회 시점 값입니다. 둘 다 미래 성과를 보장하지 않습니다. 이 목록은 비교 항목을 익히기 위한 예시 구성이며, 실제 총보수·수익률·거래량·괴리율·순위는 시장 상황과 조회 시점에 따라 달라집니다. 매수 전에는 반드시 최신 상품설명서·투자설명서와 실시간 시세를 확인하세요.</p>
       </section>
     </div>
 
@@ -2553,9 +2871,17 @@
         if (!modal || !trigger) return;
         const closeButton = modal.querySelector(".glossary-modal__close");
         const returnAsOf = document.getElementById("aiTopPicksReturnAsOf");
-        const returnCells = [...modal.querySelectorAll("[data-ai-return-code]")];
+        const threeMonthCells = [...modal.querySelectorAll('[data-ai-return-period="3m"]')];
+        const oneMonthCells = [...modal.querySelectorAll('[data-ai-return-period="1m"]')];
         let returnsRequest;
         const percentage = (value) => `${Number(value) >= 0 ? "+" : ""}${Number(value).toFixed(2)}%`;
+        const setReturnCell = (cell, value) => {
+          if (!Number.isFinite(value)) { cell.textContent = "조회 불가"; return; }
+          cell.textContent = percentage(value);
+          cell.classList.toggle("positive", value >= 0);
+          cell.classList.toggle("negative", value < 0);
+        };
+        const isoDate = (date) => date.toISOString().slice(0, 10);
         const loadReturns = () => {
           if (returnsRequest) return returnsRequest;
           returnsRequest = fetch("assets/etf-catalog.json", { cache: "no-store" })
@@ -2565,16 +2891,26 @@
             })
             .then((data) => {
               const itemsByCode = new Map((data.items || []).map((item) => [item.code, item]));
-              returnCells.forEach((cell) => {
+              threeMonthCells.forEach((cell) => {
                 const value = Number(itemsByCode.get(cell.dataset.aiReturnCode)?.return3m);
-                if (!Number.isFinite(value)) return;
-                cell.textContent = percentage(value);
-                cell.classList.toggle("positive", value >= 0);
-                cell.classList.toggle("negative", value < 0);
+                setReturnCell(cell, value);
               });
               if (returnAsOf && data.updatedAt) returnAsOf.textContent = `${data.updatedAt} 조회 기준`;
+              const end = new Date(`${data.updatedAt}T00:00:00`);
+              const start = new Date(end);
+              start.setMonth(start.getMonth() - 1);
+              return Promise.all(oneMonthCells.map(async (cell) => {
+                try {
+                  const response = await fetch(`${window.API_BASE || ""}/market/period-return?ticker=${encodeURIComponent(cell.dataset.aiReturnCode)}&start=${isoDate(start)}&end=${isoDate(end)}`);
+                  if (!response.ok) throw new Error("period return unavailable");
+                  const result = await response.json();
+                  setReturnCell(cell, result.available ? Number(result.return_pct) : NaN);
+                } catch (error) {
+                  setReturnCell(cell, NaN);
+                }
+              }));
             })
-            .catch(() => {});
+            .catch(() => { oneMonthCells.forEach((cell) => setReturnCell(cell, NaN)); });
           return returnsRequest;
         };
         const open = () => { modal.hidden = false; closeButton?.focus(); loadReturns(); };
@@ -3202,6 +3538,114 @@
         });
         trigger.addEventListener("click", open);
         modal.querySelectorAll("[data-etf-catalog-close]").forEach((element) => element.addEventListener("click", close));
+        document.addEventListener("keydown", (event) => { if (event.key === "Escape") close(); });
+      })();
+    </script>
+    <script>
+      (() => {
+        const modal = document.getElementById("etfMarketActivityModal");
+        const trigger = document.getElementById("etfMarketActivityTrigger");
+        if (!modal || !trigger) return;
+        const tabs = [...modal.querySelectorAll("[data-etf-market-tab]")];
+        const panels = [...modal.querySelectorAll("[data-etf-market-panel]")];
+        const closeButton = modal.querySelector(".glossary-modal__close");
+        let managerChart;
+        let productChart;
+        const chartOptions = (categories, data, color, suffix) => ({
+          chart: { type: "bar", height: 280, toolbar: { show: false }, animations: { enabled: true } },
+          series: [{ name: suffix, data }],
+          colors: [color],
+          plotOptions: { bar: { horizontal: true, borderRadius: 5, barHeight: "57%" } },
+          dataLabels: { enabled: true, formatter: (value) => `${value.toLocaleString("ko-KR")}${suffix}`, style: { fontSize: "12px", fontWeight: 800 } },
+          xaxis: { categories, labels: { formatter: (value) => `${Number(value).toLocaleString("ko-KR")}${suffix}` } },
+          yaxis: { labels: { style: { fontSize: "13px", fontWeight: 700 } } },
+          grid: { borderColor: "#dbe5f5", strokeDashArray: 4 },
+          tooltip: { y: { formatter: (value) => `${Number(value).toLocaleString("ko-KR")} ${suffix}` } },
+          legend: { show: false },
+        });
+        const renderCharts = () => {
+          if (!managerChart) {
+            managerChart = new ApexCharts(document.getElementById("etfManagerActivityChart"), chartOptions(
+              ["KODEX", "TIGER", "RISE", "ACE", "SOL"], [200.8, 158.7, 37.8, 36.5, 26.3], "#315ff4", "조 원",
+            ));
+            managerChart.render();
+          }
+        };
+        const renderProductChart = () => {
+          if (productChart) return;
+          productChart = new ApexCharts(document.getElementById("etfProductActivityChart"), chartOptions(
+            ["KODEX 200", "RISE 삼성전자SK하이닉스채권혼합50"], [13.4344, 4.358], "#e87935", "조 원",
+          ));
+          productChart.render();
+        };
+        const activate = (name) => {
+          tabs.forEach((tab) => {
+            const selected = tab.dataset.etfMarketTab === name;
+            tab.classList.toggle("active", selected);
+            tab.setAttribute("aria-selected", String(selected));
+          });
+          panels.forEach((panel) => { panel.hidden = panel.dataset.etfMarketPanel !== name; });
+          if (name === "product") renderProductChart();
+        };
+        const open = () => { modal.hidden = false; renderCharts(); activate("manager"); closeButton?.focus(); };
+        const close = () => { if (!modal.hidden) { modal.hidden = true; trigger.focus(); } };
+        trigger.addEventListener("click", open);
+        tabs.forEach((tab) => tab.addEventListener("click", () => activate(tab.dataset.etfMarketTab)));
+        modal.querySelectorAll("[data-etf-market-activity-close]").forEach((element) => element.addEventListener("click", close));
+        document.addEventListener("keydown", (event) => { if (event.key === "Escape") close(); });
+      })();
+    </script>
+    <script>
+      (() => {
+        const modal = document.getElementById("etfRoleModal");
+        const triggers = [...document.querySelectorAll("[data-etf-role-modal]")];
+        if (!modal || !triggers.length) return;
+        const title = document.getElementById("etfRoleTitle");
+        const lead = document.getElementById("etfRoleLead");
+        const picture = document.getElementById("etfRolePicture");
+        const points = document.getElementById("etfRolePoints");
+        const note = document.getElementById("etfRoleNote");
+        const closeButton = modal.querySelector(".glossary-modal__close");
+        let opener = null;
+        const content = {
+          ap: {
+            title: "AP(지정참가회사)는 ETF의 ‘큰 단위 출입구’입니다",
+            lead: "개인 투자자는 증권사 앱에서 ETF를 1주씩 사고팔지만, AP는 운용사와 직접 큰 묶음의 ETF를 새로 만들거나(설정) 없앨 수 있는 전문 참가자입니다.",
+            picture: '<i class="fa-solid fa-boxes-stacked"></i><span>주식·현금 바스켓</span><i class="fa-solid fa-arrow-right-arrow-left"></i><b>AP</b><i class="fa-solid fa-arrow-right-arrow-left"></i><span>ETF 큰 묶음</span>',
+            points: [
+              ["설정", "주식 바스켓이나 현금을 운용사에 내고 ETF 지분의 큰 묶음을 받습니다."],
+              ["환매", "ETF 큰 묶음을 돌려주고, 그에 해당하는 주식 바스켓이나 현금을 받습니다."],
+              ["가격 차이 완화", "ETF 시장가격과 NAV 차이가 크면 설정·환매 또는 차익거래를 통해 차이를 줄일 유인이 생깁니다."],
+            ],
+            note: "AP는 일반 투자자의 주문을 대신 체결해 주는 앱이 아닙니다. 보통 개인은 거래소 시장에서 ETF를 매매하고, AP는 설정·환매가 가능한 큰 단위의 1차 시장에 참여합니다.",
+          },
+          lp: {
+            title: "LP(유동성공급자)는 ETF 호가창의 ‘양쪽 가격 안내판’입니다",
+            lead: "사려는 사람과 팔려는 사람이 적어 호가 차이가 벌어질 때, LP는 매수·매도 호가를 함께 제시해 투자자가 거래할 수 있도록 돕습니다.",
+            picture: '<span>매수호가</span><i class="fa-solid fa-arrow-right"></i><b>LP</b><i class="fa-solid fa-arrow-left"></i><span>매도호가</span>',
+            points: [
+              ["양방향 호가", "필요한 상황에서 매수호가와 매도호가를 함께 내어 거래 상대방을 찾기 쉽게 합니다."],
+              ["호가 차이 관리", "호가 스프레드가 과도하게 벌어지지 않도록 하여 시장가격이 NAV와 크게 어긋나는 위험을 줄이는 역할을 합니다."],
+              ["상장 후 계속되는 역할", "LP 계약은 상장할 때만 필요한 서류가 아니라, ETF가 거래되는 동안 유동성을 돕는 운영 장치입니다."],
+            ],
+            note: "LP가 있다고 언제나 원하는 가격에 거래되거나 손실이 막히는 것은 아닙니다. 급변동·기초자산 휴장·거래 제한 상황에는 호가가 넓어지거나 의무가 면제될 수 있습니다.",
+          },
+        };
+        const open = (kind, trigger) => {
+          const item = content[kind];
+          if (!item) return;
+          opener = trigger;
+          title.textContent = item.title;
+          lead.textContent = item.lead;
+          picture.innerHTML = item.picture;
+          points.innerHTML = item.points.map(([heading, description]) => `<article><b>${heading}</b><span>${description}</span></article>`).join("");
+          note.textContent = item.note;
+          modal.hidden = false;
+          closeButton?.focus();
+        };
+        const close = () => { if (!modal.hidden) { modal.hidden = true; opener?.focus(); } };
+        triggers.forEach((trigger) => trigger.addEventListener("click", () => open(trigger.dataset.etfRoleModal, trigger)));
+        modal.querySelectorAll("[data-etf-role-close]").forEach((element) => element.addEventListener("click", close));
         document.addEventListener("keydown", (event) => { if (event.key === "Escape") close(); });
       })();
     </script>
