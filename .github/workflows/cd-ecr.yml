@@ -1,16 +1,21 @@
 name: CD — Build to ECR and Deploy
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "app/**"
-      - "frontend/**"
-      - "streamlit_app.py"
-      - "requirements.txt"
-      - "Dockerfile"
-      - "docker-compose.ecr.yml"
-      - ".github/workflows/cd-ecr.yml"
+# 2026-09-14: 작업본(EST-Bootcamp-Dongwon/domain-rag-lab)에서는 자동 배포를 차단한다.
+# 강사님 원본의 ECR 빌드·배포 잡이라 이 저장소에는 AWS 자격 증명 Secrets 가 없고, push 마다 실패만 쌓인다.
+# push 트리거를 주석으로 남기고 수동 실행(workflow_dispatch)만 둔다.
+# 재활성화하려면 아래 push 블록을 복원하기 전에 저장소 Secrets(AWS_ACCESS_KEY_ID 등)부터 등록한다.
+#
+#  push:
+#    branches: [main]
+#    paths:
+#      - "app/**"
+#      - "frontend/**"
+#      - "streamlit_app.py"
+#      - "requirements.txt"
+#      - "Dockerfile"
+#      - "docker-compose.ecr.yml"
+#      - ".github/workflows/cd-ecr.yml"
   workflow_dispatch:
 
 concurrency:
