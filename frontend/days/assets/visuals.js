@@ -75,10 +75,6 @@
     if (thorpBody && !document.getElementById('thorpOfficialLink')) {
       thorpBody.insertAdjacentHTML('beforeend', `<p class="lesson-video-cta"><a id="thorpOfficialLink" class="lesson-video-link" href="https://www.edwardothorp.com/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> 에드워드 O. 소프 공식 홈페이지</a><small>약력, 저서, 공개 논문·글을 확인할 수 있습니다.</small></p>`);
     }
-    const simonsBody = target('제임스 사이먼스:')?.querySelector('.lesson-body');
-    if (simonsBody && !document.getElementById('rentecOfficialLink')) {
-      simonsBody.insertAdjacentHTML('beforeend', `<p class="lesson-video-cta"><a id="rentecOfficialLink" class="lesson-video-link" href="https://www.rentec.com/Home.action?index=true" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> 르네상스 테크놀로지스 공식 홈페이지</a><small>제임스 사이먼스가 설립한 퀀트 운용사입니다. 공개된 회사 소개를 확인하세요.</small></p>`);
-    }
     const hmmBody = target('히든 마코프 모델(HMM):')?.querySelector('.lesson-body');
     if (hmmBody && !document.getElementById('hmmDocsLink')) {
       hmmBody.insertAdjacentHTML('beforeend', `<p class="lesson-video-cta"><a id="hmmDocsLink" class="lesson-video-link" href="https://hmmlearn.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> HMM 공개 구현체 공식 문서</a><small>HMM 자체는 특정 기업의 서비스가 아닌 통계 모형입니다. 대표 Python 구현체 hmmlearn의 공식 문서입니다.</small></p><p class="lesson-video-cta"><button type="button" class="lesson-video-link" id="hmmSimTrigger"><i class="fa-solid fa-wave-square"></i> 시장 국면(HMM) 시뮬레이터</button><small>관측된 수익률·변동성에 따라 잔잔함/불안함 국면 확률과 대응 규칙을 확인하세요.</small></p>`);
@@ -86,17 +82,6 @@
     const executionBody = target('시타델·메릴린치 사례')?.querySelector('.lesson-body');
     if (executionBody && !document.getElementById('citadelSecuritiesLink')) {
       executionBody.insertAdjacentHTML('beforeend', `<p class="lesson-video-cta"><a id="citadelSecuritiesLink" class="lesson-video-link" href="https://citadelsecurities.com/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Citadel Securities 공식 홈페이지</a><a class="lesson-video-link" href="https://www.merrilllynch.com/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Merrill 공식 홈페이지</a><small>사례의 대상 회사 소개를 확인하는 링크이며, 과거 제재 내용은 각 규제기관의 원문으로 별도 확인하세요.</small></p>`);
-    }
-    if (!document.getElementById('koreanPairBreakTimeModal')) {
-      document.body.insertAdjacentHTML('beforeend', `<div class="glossary-modal breaktime-modal" id="koreanPairBreakTimeModal" hidden><div class="glossary-modal__backdrop" data-korean-pair-breaktime-close></div><section class="glossary-modal__dialog breaktime-dialog" role="dialog" aria-modal="true" aria-labelledby="koreanPairBreakTimeTitle"><button class="glossary-modal__close" type="button" aria-label="닫기" data-korean-pair-breaktime-close>×</button><p class="glossary-modal__label">BREAKTIME · 확장 과제</p><h2 id="koreanPairBreakTimeTitle">다른 종목 페어도 비교해 보세요</h2><p>비교하려는 두 종목의 업종·사업 구조·거래량·공매도 가능 여부와 주요 이벤트를 먼저 찾아보세요. 단지 상관관계가 높다는 이유만으로 페어가 적합한 것은 아닙니다.</p><p><b>시스템 확장 과제:</b> 종목 선택 목록에 새 페어를 추가하고, 각 페어별 가격 데이터·비교 기간·진입 Z 기준·거래비용을 바꿔 결과를 비교해 보세요.</p><p><small>당일 종가로 신호를 만들었다면 다음 거래일 체결가로 검증하고, 수수료·세금·대차료·슬리피지와 표본 밖 기간을 함께 반영해야 합니다.</small></p></section></div>`);
-    }
-    const koreanPairBreakTimeTrigger = document.getElementById('koreanPairBreakTimeTrigger');
-    const koreanPairBreakTimeModal = document.getElementById('koreanPairBreakTimeModal');
-    if (koreanPairBreakTimeTrigger && koreanPairBreakTimeModal && !koreanPairBreakTimeTrigger.dataset.ready) {
-      const closeKoreanPairBreakTime = () => { koreanPairBreakTimeModal.hidden = true; koreanPairBreakTimeTrigger.focus(); };
-      koreanPairBreakTimeTrigger.addEventListener('click', () => { koreanPairBreakTimeModal.hidden = false; koreanPairBreakTimeModal.querySelector('.glossary-modal__close')?.focus(); });
-      koreanPairBreakTimeModal.querySelectorAll('[data-korean-pair-breaktime-close]').forEach((element) => element.addEventListener('click', closeKoreanPairBreakTime));
-      koreanPairBreakTimeTrigger.dataset.ready = 'true';
     }
     const spoofingBody = target('허수성 주문(스푸핑):')?.querySelector('.lesson-body');
     if (spoofingBody && !document.getElementById('spoofingOrderBookTrigger')) {
