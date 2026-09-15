@@ -33,10 +33,12 @@ app = FastAPI(title=settings.app_name)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://domain-rag-086015456585-ap-northeast-2.s3-website.ap-northeast-2.amazonaws.com",
-        "http://bb.edumgt.co.kr",
-        "https://www.edumgt.co.kr",
-        "http://www.edumgt.co.kr",
+        # [직접 입력] 프론트를 API 와 다른 출처(S3 정적 웹사이트·내 도메인)에 올릴 때만 채운다 — 목록: SETUP_PLACEHOLDERS.md
+        # 로컬은 FastAPI 가 프론트를 같은 출처로 서빙하므로 칸을 채우지 않아도 그대로 실행된다.
+        "http://<S3_BUCKET_NAME>.s3-website.ap-northeast-2.amazonaws.com",
+        "http://<MY_FRONTEND_DOMAIN>",
+        "https://<MY_WEB_DOMAIN>",
+        "http://<MY_WEB_DOMAIN>",
     ],
     allow_credentials=True,
     allow_methods=["*"],

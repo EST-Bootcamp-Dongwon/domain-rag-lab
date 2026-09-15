@@ -1,8 +1,9 @@
+# [직접 입력] 아래 image 5곳의 <AWS_ACCOUNT_ID> 를 내 AWS 계정 ID 12자리로 바꾼다 (리전이 다르면 ap-northeast-2 도) — 목록: SETUP_PLACEHOLDERS.md
 name: domain-rag-lab-ecr
 
 services:
   postgres:
-    image: 086015456585.dkr.ecr.ap-northeast-2.amazonaws.com/domain-rag-lab-postgres:latest
+    image: <AWS_ACCOUNT_ID>.dkr.ecr.ap-northeast-2.amazonaws.com/domain-rag-lab-postgres:latest
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-ragdb}
       POSTGRES_USER: ${POSTGRES_USER:-raguser}
@@ -20,7 +21,7 @@ services:
     restart: unless-stopped
 
   redis:
-    image: 086015456585.dkr.ecr.ap-northeast-2.amazonaws.com/domain-rag-lab-redis:latest
+    image: <AWS_ACCOUNT_ID>.dkr.ecr.ap-northeast-2.amazonaws.com/domain-rag-lab-redis:latest
     ports:
       - "6380:6379"
     volumes:
@@ -33,7 +34,7 @@ services:
     restart: unless-stopped
 
   qdrant:
-    image: 086015456585.dkr.ecr.ap-northeast-2.amazonaws.com/domain-rag-lab-qdrant:latest
+    image: <AWS_ACCOUNT_ID>.dkr.ecr.ap-northeast-2.amazonaws.com/domain-rag-lab-qdrant:latest
     ports:
       - "6335:6333"
       - "6336:6334"
@@ -47,7 +48,7 @@ services:
     restart: unless-stopped
 
   api:
-    image: 086015456585.dkr.ecr.ap-northeast-2.amazonaws.com/domain-rag-lab-api:latest
+    image: <AWS_ACCOUNT_ID>.dkr.ecr.ap-northeast-2.amazonaws.com/domain-rag-lab-api:latest
     ports:
       - "80:8000"
     env_file:
@@ -88,7 +89,7 @@ services:
     restart: unless-stopped
 
   streamlit:
-    image: 086015456585.dkr.ecr.ap-northeast-2.amazonaws.com/domain-rag-lab-streamlit:latest
+    image: <AWS_ACCOUNT_ID>.dkr.ecr.ap-northeast-2.amazonaws.com/domain-rag-lab-streamlit:latest
     ports:
       - "8290:8501"
     env_file:

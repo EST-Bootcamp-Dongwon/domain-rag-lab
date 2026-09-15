@@ -24,7 +24,8 @@ concurrency:
 
 env:
   AWS_REGION: ${{ secrets.AWS_REGION }}
-  ECR_REGISTRY: 086015456585.dkr.ecr.ap-northeast-2.amazonaws.com
+  # [직접 입력] 내 AWS 계정 ID 12자리. ECR 리포지토리를 만든 리전이 다르면 ap-northeast-2 도 바꾼다 — 목록: SETUP_PLACEHOLDERS.md
+  ECR_REGISTRY: <AWS_ACCOUNT_ID>.dkr.ecr.ap-northeast-2.amazonaws.com
 
 jobs:
   build-and-push:

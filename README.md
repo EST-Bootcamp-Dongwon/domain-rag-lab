@@ -203,7 +203,7 @@ AWS 서버에서만 아래 명령을 실행합니다. 운영 Compose는 소스 �
 ```bash
 cp .env.prod.example .env.prod
 # .env.prod에서 강한 PostgreSQL 비밀번호, LLM 주소, 서버 내 PEM 경로를 설정
-chmod 600 /home/ubuntu/.ssh/pr-test.pem
+chmod 600 /home/ubuntu/.ssh/<SSH_KEY_FILE>
 docker compose --env-file .env.prod -f docker-compose.prod.yml up --build -d
 docker compose --env-file .env.prod -f docker-compose.prod.yml ps
 ```
@@ -219,7 +219,7 @@ Caddy는 Python 모듈이 아니라 웹 서버이자 리버스 프록시입니�
 현재 [Caddyfile](Caddyfile)은 아래처럼 도메인별 프록시를 간결하게 정의합니다. 도메인의 DNS가 서버를 가리키고 80/443 포트가 열려 있으면, Caddy는 기본 설정으로 HTTPS 인증서를 자동 발급·갱신합니다.
 
 ```caddy
-pr.edumgt.co.kr {
+<MY_DOMAIN> {
     encode zstd gzip
     reverse_proxy api:8000
 }
