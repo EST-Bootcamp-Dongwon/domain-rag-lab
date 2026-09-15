@@ -82,7 +82,7 @@
       .bond-coupon-figure { max-width: 760px; margin: 18px auto; padding: 10px; border: 1px solid var(--line); border-radius: 14px; background: #fbfcff; }
       .bond-coupon-figure img { display: block; width: 100%; height: auto; border-radius: 10px; }
       .bond-coupon-figure figcaption { padding: 9px 5px 1px; color: var(--muted); font-size: 14.5px; line-height: 1.6; }
-      .bok-rate-modal .bok-rate-dialog { display: grid; grid-template-rows: auto auto auto minmax(210px, 1fr) auto auto auto; gap: 8px; width: min(1180px, 96vw) !important; height: 96vh !important; padding: 24px 30px !important; overflow: hidden !important; }
+      .bok-rate-modal .bok-rate-dialog { display: grid; grid-template-rows: auto auto auto minmax(310px, 1fr) auto auto auto; gap: 8px; width: 95vw !important; height: 95vh !important; padding: 24px 30px !important; overflow: hidden !important; }
       .bok-rate-dialog h2 { margin: 0 48px 0 0; font-size: clamp(21px, 2vw, 27px); line-height: 1.25; }
       .bok-rate-intro { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
       .bok-rate-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0; }
@@ -91,6 +91,7 @@
       .bok-rate-summary strong { display: block; margin: 2px 0; color: var(--ink); font-size: 18px; line-height: 1.2; }
       .bok-rate-summary small { font-size: 11px; }
       .bok-rate-chart { min-height: 0; padding: 8px; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #fbfcff; }
+      .bok-rate-chart__canvas { width: 100%; height: 100%; min-height: 310px; }
       .bok-rate-chart svg { display: block; width: 100%; height: 100%; min-width: 0; }
       .bok-rate-chart .grid { stroke: #dbe4f2; stroke-width: 1; }
       .bok-rate-chart .axis, .bok-rate-chart .date { fill: #63708a; font-family: Arial, sans-serif; font-size: 13px; }
@@ -101,7 +102,7 @@
       .bok-rate-events span { padding: 6px 9px; border-left: 3px solid var(--blue); border-radius: 7px; background: #f4f7ff; color: #395171; font-size: 12px; line-height: 1.35; }
       .bok-rate-note { margin: 0; padding: 8px 10px; border-left: 4px solid #f0a10a; border-radius: 8px; background: #fff9e8; color: #705316; font-size: 12px; line-height: 1.4; }
       .bok-rate-source { font-size: 11px; line-height: 1.3; }
-      @media (max-width: 760px) { .bok-rate-modal .bok-rate-dialog { grid-template-rows: auto auto auto minmax(180px, 1fr) auto auto auto; width: 96vw !important; padding: 18px 16px !important; } .bok-rate-summary { gap: 5px; } .bok-rate-summary article { padding: 6px 4px; } .bok-rate-summary span { font-size: 10px; } .bok-rate-summary strong { font-size: 15px; } .bok-rate-summary small { font-size: 9px; } .bok-rate-events { grid-template-columns: repeat(2, 1fr); gap: 5px; } .bok-rate-events span { padding: 5px 7px; font-size: 10px; } .bok-rate-note { font-size: 10px; } .bok-rate-source { display: none; } }
+      @media (max-width: 760px) { .bok-rate-modal .bok-rate-dialog { grid-template-rows: auto auto auto minmax(260px, 1fr) auto auto auto; width: 95vw !important; height: 95vh !important; padding: 18px 16px !important; } .bok-rate-chart__canvas { min-height: 260px; } .bok-rate-summary { gap: 5px; } .bok-rate-summary article { padding: 6px 4px; } .bok-rate-summary span { font-size: 10px; } .bok-rate-summary strong { font-size: 15px; } .bok-rate-summary small { font-size: 9px; } .bok-rate-events { grid-template-columns: repeat(2, 1fr); gap: 5px; } .bok-rate-note { font-size: 10px; } .bok-rate-source { display: none; } }
       @media (max-height: 680px) { .bok-rate-modal .bok-rate-dialog { gap: 5px; padding-top: 18px !important; padding-bottom: 18px !important; } .bok-rate-intro { font-size: 11px; } .bok-rate-note { padding-top: 5px; padding-bottom: 5px; } .bok-rate-source { display: none; } }
       .correlation-sim-modal .correlation-sim-dialog { width: min(1040px, calc(100vw - 48px)); max-height: calc(100vh - 48px); overflow: auto; }
       .corr-sim-picker { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 9px; margin: 16px 0 12px; }
@@ -306,7 +307,6 @@
                 <p><strong>1. 개별 대여</strong> — 채권자와 채무자가 금액·이자·상환일을 직접 약정했습니다. 조건은 유연하지만 돈을 빌려준 사람이 만기 전 현금이 필요할 때 권리를 넘기기 쉽지 않았습니다.</p>
                 <p><strong>2. 양도 가능한 공공채·회사채</strong> — 발행자가 많은 투자자에게 자금을 빌리고, 투자자는 이자(쿠폰)와 원금 상환을 받을 권리를 보유하거나 다른 사람에게 팔 수 있게 됐습니다. 1694년 영란은행 설립 때도 영국 정부는 대프랑스 전쟁 자금을 위해 대중으로부터 120만 파운드를 조달했습니다.</p>
                 <p><strong>3. 현대 채권</strong> — 발행시장에서 정부·기업이 만기·표면금리·상환 조건을 정해 발행하고, 유통시장에서 투자자가 가격과 수익률(YTM)을 기준으로 거래합니다. 현재는 대부분 계좌의 전자등록으로 관리되지만, 발행자의 상환 능력과 금리 변화에 따른 가격 위험은 여전히 남습니다.</p>
-                <p><small>참고: <a href="https://academic.oup.com/book/47266/chapter-abstract/422652313" target="_blank" rel="noopener noreferrer">Oxford Academic의 메소포타미아 대출 기록</a>, <a href="https://openurl.ebsco.com/contentitem/doi%3A10.2307%2F1882461" target="_blank" rel="noopener noreferrer">베네치아 공공부채 연구</a>, <a href="https://www.guinnessworldrecords.com/world-records/549529-oldest-active-bond" target="_blank" rel="noopener noreferrer">Guinness의 현존 최고 활성 채권 기록</a>, <a href="https://www.bankofengland.co.uk/explainers/who-owns-the-bank-of-england" target="_blank" rel="noopener noreferrer">영란은행의 1694년 정부 자금조달 설명</a>.</small></p>
               </div>
             </div>
             <button class="lesson-toggle" type="button" data-lesson-toggle aria-expanded="true" aria-label="채권의 역사 내용 접기" title="내용 접기"><span aria-hidden="true">⌃</span></button>
@@ -558,12 +558,6 @@
                   쉽습니다. 발행 주체에 따라 국채, 지방채, 특수채, 금융채,
                   회사채로 크게 나눌 수 있고, 발행 주체가 다르면 신용위험과
                   수익률도 함께 달라집니다.
-                </p>
-                <p class="lesson-video-cta">
-                  <button type="button" class="lesson-video-link" id="bondMarketSizeTrigger">
-                    <i class="fa-solid fa-chart-bar"></i> 주요 10개국 채권시장 규모 보기
-                  </button>
-                  <small>국가별 채무증권 잔액과 10개국 합계에서 차지하는 비중을 비교합니다.</small>
                 </p>
                 <p>
                   국채는 정부(기획재정부)가 발행하는 채권입니다. 국고채권이
@@ -847,6 +841,27 @@
                   손해 볼 가능성이 크고 채권은 원금 자체가 흔들릴 수 있다는 점이
                   다릅니다.
                 </p>
+                <h3>국내에서는 어느 쪽 시장이 더 클까요?</h3>
+                <p>아래는 <b>잔액 기준의 규모</b>를 비교한 학습용 요약입니다. 채권은 정부·공공기관·기업·금융기관이 발행한 채무증권을 넓게 포함하고, 예·적금은 예금은행의 저축성예금 중심이므로 같은 종류의 통계가 아닙니다.</p>
+                <div class="lesson-table-wrap">
+                  <table class="lesson-table">
+                    <caption>국내 채권시장과 은행 예·적금 규모 비교</caption>
+                    <thead><tr><th scope="col">구분</th><th scope="col">잔액 규모(약)</th><th scope="col">무엇을 포함하나요?</th></tr></thead>
+                    <tbody>
+                      <tr><th scope="row">국내 채권시장</th><td><b>3,150조 원</b></td><td>국채 1,200~1,300조 원, 금융채·특수채 1,100~1,200조 원, 회사채 300~400조 원 등을 포함한 채무증권 잔액</td></tr>
+                      <tr><th scope="row">예금은행 예·적금</th><td><b>1,100~1,200조 원</b></td><td>정기예금·정기적금 등을 포함한 저축성예금 잔액</td></tr>
+                      <tr><th scope="row">5대 시중은행 정기예금</th><td><b>약 1,000조 원</b></td><td>KB·신한·하나·우리·NH농협의 정기예금 기준</td></tr>
+                      <tr><th scope="row">제2금융권까지 포함한 예금 수신</th><td><b>1,500조 원 이상</b></td><td>저축은행 등 금융권 수신을 넓게 포함한 규모</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p><b>한 줄 비교:</b> 전체 채권시장 잔액은 일반 예금은행의 예·적금 잔액보다 약 <b>2.5배 이상</b> 큰 규모입니다. 다만 채권시장에는 기관·기업의 자금조달도 포함되고, 예·적금 통계는 금융회사와 상품 범위에 따라 달라지므로 ‘어느 쪽이 더 안전하다’는 비교는 아닙니다.</p>
+                <p class="lesson-video-cta">
+                  <button type="button" class="lesson-video-link" id="bondMarketSizeTrigger">
+                    <i class="fa-solid fa-chart-bar"></i> 주요 10개국 채권시장 규모 보기
+                  </button>
+                  <small>국가별 채무증권 잔액과 10개국 합계에서 차지하는 비중을 비교합니다.</small>
+                </p>
                 <p class="lesson-video-cta">
                   <button type="button" class="breaktime-trigger" data-break-time-trigger>
                     <i class="fa-solid fa-mug-hot"></i> BreakTime
@@ -982,6 +997,51 @@
               <span aria-hidden="true">⌃</span>
             </button>
           </section>
+          <section class="lesson" id="positiveNegativeConvexityLesson">
+            <span>00.02A</span>
+            <div class="lesson-content">
+              <h2>양(+)·음(−)의 컨벡시티: 금리가 같은 폭으로 움직여도 결과가 다른 이유</h2>
+              <div class="lesson-body">
+                <p>컨벡시티는 <b>금리가 변할 때 채권 가격의 기울기까지 어떻게 달라지는지</b>를 보여 줍니다. 가장 쉽게는 “금리가 1%p 내려갈 때와 1%p 올라갈 때, 듀레이션이 그린 직선에서 어느 쪽으로 벗어나는가?”를 비교하면 됩니다.</p>
+                <div class="concept-visual">
+                  <p class="visual-kicker">SAME RATE MOVE · 같은 폭의 금리 변화</p>
+                  <div class="visual-row">
+                    <div class="visual-card"><strong>출발점</strong><span>가격 100만 원인 채권<br />듀레이션 5년이라고 가정</span></div>
+                    <div class="visual-card"><strong>듀레이션 직선</strong><span>금리 −1%p → 약 +5%<br />금리 +1%p → 약 −5%</span></div>
+                    <div class="visual-card blue"><strong>컨벡시티의 질문</strong><span>실제 가격은 이 직선보다<br />더 유리할까, 덜 유리할까?</span></div>
+                  </div>
+                  <figcaption>아래 숫자는 개념을 위한 단순 예시입니다. 실제 가격은 쿠폰, 만기, 수익률 수준, 신용위험과 옵션 조건에 따라 달라집니다.</figcaption>
+                </div>
+
+                <h3>양(+)의 컨벡시티: 오를 때는 조금 더, 내릴 때는 조금 덜</h3>
+                <p>일반적인 <b>옵션이 없는 고정금리채</b>를 떠올리면 됩니다. 금리가 1%p 내려가면 듀레이션의 +5% 추정보다 가격이 조금 더 올라 <b>약 +5.4%</b>가 될 수 있고, 금리가 1%p 오르면 −5% 추정보다 덜 내려 <b>약 −4.6%</b>가 될 수 있습니다. 같은 폭의 금리 움직임이라면 가격 곡선이 투자자에게 조금 더 유리하게 휘는 모습입니다.</p>
+
+                <h3>음(−)의 컨벡시티: 금리가 많이 내려도 가격 상승에 ‘천장’이 생길 수 있음</h3>
+                <p><b>발행자 조기상환권(콜옵션)</b>이 붙은 채권을 생각해 보세요. 시장금리가 내려가면 발행자는 비싼 기존 이자를 계속 줄 이유가 줄어듭니다. 약관에 따라 채권을 일찍 갚고 더 낮은 금리로 다시 빌릴 수 있습니다. 투자자는 원금을 빨리 돌려받지만, 매력적인 높은 이자를 오래 받을 기회도 함께 줄어듭니다.</p>
+                <div class="concept-visual">
+                  <p class="visual-kicker">CALLABLE BOND · 조기상환권 채권의 쉬운 비유</p>
+                  <div class="flow-visual">
+                    <div class="step highlight"><i class="fa-solid fa-file-invoice-dollar"></i>내가 보유</div><i class="fa-solid fa-arrow-right flow-arrow"></i><div class="step"><i class="fa-solid fa-percent"></i>시장금리 하락</div><i class="fa-solid fa-arrow-right flow-arrow"></i><div class="step"><i class="fa-solid fa-rotate-left"></i>발행자 조기상환 가능</div><i class="fa-solid fa-arrow-right flow-arrow"></i><div class="step"><i class="fa-solid fa-arrow-trend-up"></i>가격 상승폭 제한</div>
+                  </div>
+                  <figcaption><b>비유:</b> 높은 이자를 주는 월세 계약을 집주인이 중간에 끝낼 수 있는 상황과 비슷합니다. 금리가 낮아져 그 계약의 가치가 커져도, 발행자가 조기상환하면 그 높은 이자를 계속 받을 수 없기 때문입니다.</figcaption>
+                </div>
+
+                <div class="lesson-table-wrap">
+                  <table class="lesson-table">
+                    <caption>가격 100만 원·듀레이션 5년인 교육용 비교</caption>
+                    <thead><tr><th scope="col">금리 변화</th><th scope="col">듀레이션 직선</th><th scope="col">양(+)의 컨벡시티<br />일반 고정금리채 예시</th><th scope="col">음(−)의 컨벡시티<br />조기상환권 채권 예시</th></tr></thead>
+                    <tbody>
+                      <tr><th scope="row">금리 −1%p</th><td>약 +5.0%<br />(105만 원)</td><td><b>약 +5.4%</b><br />(105만 4천 원)</td><td><b>약 +4.6%</b><br />(104만 6천 원)</td></tr>
+                      <tr><th scope="row">금리 +1%p</th><td>약 −5.0%<br />(95만 원)</td><td><b>약 −4.6%</b><br />(95만 4천 원)</td><td><b>약 −5.4%</b><br />(94만 6천 원)</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p><b>한 줄 비교:</b> 양(+)의 컨벡시티는 금리 하락 때의 상승은 더 크고 금리 상승 때의 하락은 더 작은 경향, 음(−)의 컨벡시티는 그 반대 경향입니다. 다만 양의 컨벡시티가 있다고 손실이 없어지는 것은 아니고, 음의 컨벡시티는 특히 금리 하락기에 기대한 만큼 가격이 오르지 않을 수 있다는 점을 뜻합니다.</p>
+                <p><small>확인할 점: 모든 조기상환권 채권의 가격 움직임이 항상 같은 모양은 아닙니다. 실제로는 조기상환 가능 시점·가격, 남은 만기, 시장 변동성 등 약관과 시장 조건을 함께 봐야 합니다.</small></p>
+              </div>
+            </div>
+            <button class="lesson-toggle" type="button" data-lesson-toggle aria-expanded="true" aria-label="양과 음의 컨벡시티 내용 접기" title="내용 접기"><span aria-hidden="true">⌃</span></button>
+          </section>
           <section class="lesson" id="growthPotentialLesson">
             <span>01.9</span>
             <div class="lesson-content">
@@ -1063,6 +1123,33 @@
                   그대로 반영하는 상품)인 경우가 많으므로 매수 전 반드시
                   확인해야 합니다.
                 </p>
+                <h3>미국 장기채 ETF는 무엇이 다를까요?</h3>
+                <div class="lesson-table-wrap">
+                  <table class="lesson-table">
+                    <caption>유형별로 먼저 구분하기</caption>
+                    <thead><tr><th scope="col">유형</th><th scope="col">대표 예시</th><th scope="col">특징과 확인할 점</th></tr></thead>
+                    <tbody>
+                      <tr><th scope="row">일반 장기국채형</th><td>미국: TLT<br />국내: ACE·KODEX·PLUS·RISE 미국30년국채 계열</td><td>20년 이상 또는 30년 만기의 미국 국채 가격 변화를 추종하는 기본형입니다. 실제 편입채권인지, 선물·스왑을 이용하는지와 듀레이션을 확인합니다.</td></tr>
+                      <tr><th scope="row">초장기·제로쿠폰형</th><td>미국: EDV</td><td>이자를 중간에 적게 또는 받지 않고 만기에 받는 채권 비중이 커, 일반 장기국채형보다 금리 변화에 더 민감할 수 있습니다. 금리 하락·상승 모두 가격 변동 폭이 커질 수 있습니다.</td></tr>
+                      <tr><th scope="row">10년 국채형</th><td>미국: IEF 등<br />국내: KODEX 미국10년국채선물·미국10년국채액티브 계열</td><td>30년물보다 만기가 짧아 통상 듀레이션도 낮습니다. ‘미국채 ETF’라는 이름만 보고 장기채와 같은 가격 민감도로 생각하면 안 됩니다.</td></tr>
+                      <tr><th scope="row">레버리지·인버스형</th><td>국내: 미국30년국채선물레버리지·울트라선물·울트라선물인버스 계열</td><td>일간 수익률을 배수 또는 반대 방향으로 추종하도록 설계됩니다. 장기 보유 성과는 단순히 기초지수 수익률의 배수·반대가 아닐 수 있어, 일반 채권 ETF와 분리해 봐야 합니다.</td></tr>
+                      <tr><th scope="row">커버드콜·혼합형</th><td>국내: 미국30년국채 타겟커버드콜·주식·미국채 혼합 계열</td><td>옵션 프리미엄 또는 주식 비중을 더한 구조입니다. 분배금만 보지 말고, 금리 하락 때의 가격 상승 가능성이 일부 제한되는지와 주식 위험이 섞였는지를 확인합니다.</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p><small>위 국내 상품명은 이 사이트의 ETF 목록에 포함된 사례이며, 상장·운용 방식·보수·환헤지 조건은 바뀔 수 있습니다. 실제 주문 전에는 운용사 상품설명서와 거래소 공시를 확인하세요.</small></p>
+                <h3>국내 상장 ETF와 미국 상장 ETF, 이렇게 비교하세요</h3>
+                <div class="lesson-table-wrap">
+                  <table class="lesson-table">
+                    <thead><tr><th scope="col">확인 항목</th><th scope="col">국내 상장 미국채 ETF</th><th scope="col">미국 상장 ETF 직접 투자</th></tr></thead>
+                    <tbody>
+                      <tr><th scope="row">매수 통화·시간</th><td>원화·한국 거래시간</td><td>달러·미국 거래시간</td></tr>
+                      <tr><th scope="row">환율</th><td>환노출형·환헤지형 여부를 상품별로 확인</td><td>원화 기준 성과에는 달러 환율 변동이 함께 반영</td></tr>
+                      <tr><th scope="row">구조</th><td>현물 채권, 선물, 스왑, 액티브 운용 여부를 확인</td><td>편입 채권의 만기 구간·가중방식·보수를 확인</td></tr>
+                      <tr><th scope="row">비용·세금</th><td>총보수 외 매매 수수료·과세 기준을 확인</td><td>환전 비용·해외 거래 수수료·과세 기준을 함께 확인</td></tr>
+                    </tbody>
+                  </table>
+                </div>
                 <p>
                   장기채 ETF는 앞서 본 듀레이션 개념처럼 금리 변화에 특히
                   민감합니다. “미국 금리가 내릴 것 같아서 장기채를 산다”는
@@ -1325,6 +1412,27 @@
                   <li><b>이더리움 토큰:</b> 이더리움 스마트계약이 발행한 자산입니다. ERC-20은 대체 가능한 토큰, NFT에는 ERC-721·ERC-1155 같은 별도 표준이 흔히 쓰입니다.</li>
                   <li><b>가장 중요한 확인:</b> 같은 이름·티커라도 전송 네트워크가 다르면 다른 주소 형식·수수료·복구 절차가 적용될 수 있습니다. 입금 화면의 네트워크와 출금 네트워크를 반드시 일치시켜야 합니다.</li>
                 </ul>
+                <h3>대표적으로 보는 10대 알트코인: 무엇을 위해 쓰이나요?</h3>
+                <p>알트코인(altcoin)은 보통 비트코인 이외의 가상자산을 넓게 부르는 말입니다. 아래 목록은 <strong>스테이블코인을 제외하고 교육에서 자주 비교하는 대표 프로젝트 10종</strong>입니다. 시가총액·거래량·순위는 매일 바뀌므로 ‘현재 10위권’이라는 투자 순위표가 아니며, 어떤 코인도 매수 추천이 아닙니다.</p>
+                <div class="lesson-table-wrap">
+                  <table class="lesson-table">
+                    <caption>대표 알트코인의 용도·구조·확인할 위험</caption>
+                    <thead><tr><th scope="col">자산</th><th scope="col">주요 쓰임과 구조</th><th scope="col">학습할 때 함께 볼 위험</th></tr></thead>
+                    <tbody>
+                      <tr><th scope="row"><a href="https://ethereum.org/" target="_blank" rel="noopener noreferrer">이더리움 (ETH)</a></th><td>스마트계약을 실행하는 대표 플랫폼의 네이티브 코인입니다. 앱 실행·토큰 전송 때 가스비를 내고, 검증 참여에 쓰입니다.</td><td>가스비·확장성·업그레이드, DeFi·토큰 생태계의 코드 및 보안 위험을 함께 봅니다.</td></tr>
+                      <tr><th scope="row"><a href="https://xrpl.org/" target="_blank" rel="noopener noreferrer">XRP</a></th><td>XRP Ledger에서 빠른 전송·결제를 목표로 쓰이는 네이티브 자산입니다. 네트워크와 이를 활용하는 기업 서비스는 구분해 이해해야 합니다.</td><td>규제·유통 구조와 실제 네트워크 사용량, 특정 기업·생태계 의존도를 확인합니다.</td></tr>
+                      <tr><th scope="row"><a href="https://docs.bnbchain.org/" target="_blank" rel="noopener noreferrer">BNB</a></th><td>BNB Chain의 수수료 지불·스테이킹 등에 쓰이는 네이티브 코인입니다. 거래소 생태계와 체인 생태계의 연결성이 큽니다.</td><td>운영 주체·검증자 집중도, 거래소·규제 이슈가 체인 수요에 미치는 영향을 봅니다.</td></tr>
+                      <tr><th scope="row"><a href="https://solana.com/docs" target="_blank" rel="noopener noreferrer">솔라나 (SOL)</a></th><td>낮은 수수료와 빠른 처리량을 목표로 하는 스마트계약 플랫폼의 네이티브 코인입니다. DeFi·NFT·소비자 앱에서 쓰입니다.</td><td>네트워크 혼잡·중단 이력, 검증자 구성과 생태계 앱의 보안·유동성 위험을 확인합니다.</td></tr>
+                      <tr><th scope="row"><a href="https://developers.tron.network/" target="_blank" rel="noopener noreferrer">트론 (TRX)</a></th><td>TRON 네트워크의 수수료·자원(대역폭·에너지)·스테이킹에 쓰이는 코인입니다. 스테이블코인 전송 비중이 큰 편입니다.</td><td>검증·거버넌스 집중도와 스테이블코인 전송 수요에 대한 의존도를 살핍니다.</td></tr>
+                      <tr><th scope="row"><a href="https://developer.dogecoin.org/" target="_blank" rel="noopener noreferrer">도지코인 (DOGE)</a></th><td>밈에서 출발한 공개 결제용 코인으로, 커뮤니티·인지도가 사용과 거래의 주요 배경이 됩니다.</td><td>현금흐름이나 사업권리가 없는 구조, 높은 심리·유행 의존성과 큰 가격 변동을 유의합니다.</td></tr>
+                      <tr><th scope="row"><a href="https://docs.cardano.org/" target="_blank" rel="noopener noreferrer">카르다노 (ADA)</a></th><td>지분증명 기반 스마트계약 플랫폼의 네이티브 코인입니다. 스테이킹·거버넌스·수수료에 활용됩니다.</td><td>개발·앱 생태계의 실제 사용량, 업그레이드 일정과 경쟁 체인 대비 활동성을 확인합니다.</td></tr>
+                      <tr><th scope="row"><a href="https://build.avax.network/" target="_blank" rel="noopener noreferrer">아발란체 (AVAX)</a></th><td>서브넷 등 여러 맞춤형 네트워크 구성을 목표로 하는 스마트계약 플랫폼의 네이티브 코인입니다.</td><td>서브넷 채택과 토큰 수요의 연결, 토큰 잠금 해제·경쟁 플랫폼 위험을 봅니다.</td></tr>
+                      <tr><th scope="row"><a href="https://docs.sui.io/" target="_blank" rel="noopener noreferrer">수이 (SUI)</a></th><td>객체 중심 자산 모델을 내세운 지분증명 스마트계약 플랫폼의 네이티브 코인입니다.</td><td>상대적으로 짧은 운영 이력, 토큰 유통·잠금 해제와 생태계 초기 단계의 변동성을 확인합니다.</td></tr>
+                      <tr><th scope="row"><a href="https://docs.chain.link/" target="_blank" rel="noopener noreferrer">체인링크 (LINK)</a></th><td>스마트계약이 외부 가격·데이터를 받아오도록 돕는 오라클 네트워크의 토큰입니다. 자체 L1의 가스비 코인과는 역할이 다릅니다.</td><td>오라클 데이터 정확성·노드 운영·스테이킹 구조, 다른 오라클과의 경쟁을 따로 살핍니다.</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p><b>공통 체크:</b> 이름이나 순위보다 ① 어느 네트워크의 자산인지, ② 수수료·스테이킹·담보 등 토큰의 실제 역할이 무엇인지, ③ 공급량과 잠금 해제 일정, ④ 개발·보안·규제·거래소 위험을 먼저 확인합니다. 프로젝트의 기술 설명은 가격·수익 또는 안전성을 보장하지 않습니다.</p>
                 <p class="lesson-video-cta">
                   <button type="button" class="lesson-video-link" id="cryptoMarketScaleTrigger">
                     <i class="fa-solid fa-chart-pie"></i> 세계 금융시장 속 가상자산 규모 보기
@@ -1456,7 +1564,7 @@
                 <p><b>유의:</b> 현대 금융시장에서는 알고리즘이 가격 차이를 빠르게 줄이므로 개인 투자자가 수동으로 수익을 내기는 매우 어렵습니다. 한쪽 주문만 체결되는 위험, 호가 잔량 부족, 출금·입금 지연, 거래소별 수수료와 최소 주문금액도 실제 결과를 바꿀 수 있습니다.</p>
                 <h3>에어드롭과 거래소의 홍보 방식</h3>
                 <p><b>에어드롭(Airdrop)</b>은 프로젝트가 이용자 지갑이나 계정에 토큰을 무상으로 배분하는 방식입니다. 초기 이용자에게 보상하거나, 새 서비스·토큰의 존재를 알리고 커뮤니티 참여를 늘리기 위해 활용합니다. 다만 ‘무료 토큰 수령’을 이유로 복구 문구·개인키를 요구하거나 낯선 거래에 서명하게 하면 사기일 가능성이 높습니다. 정상적인 에어드롭도 가격 상승이나 거래소 상장을 보장하지 않으며, 세금·매도 가능 시점·토큰 공급량을 별도로 확인해야 합니다.</p>
-                <p>거래소는 운영 방식에 따라 <b>중앙화 거래소(CEX)</b>, <b>탈중앙화 거래소(DEX)</b>, 그리고 여러 거래소의 가격·유동성을 모아 보여 주는 <b>거래소 집계·중개 서비스</b>로 나누어 볼 수 있습니다. CEX는 원화 입출금과 고객지원이 편할 수 있지만 사업자가 자산을 수탁합니다. DEX는 지갑으로 직접 거래하지만 네트워크 수수료와 스마트계약 위험을 이용자가 부담합니다. 집계 서비스는 실제 주문이 어느 거래소에서 체결되는지와 수수료 구조를 확인해야 합니다.</p>
+                <p>거래소는 운영 방식에 따라 <b>중앙화 거래소(CEX, Centralized Exchange)</b>, <b>탈중앙화 거래소(DEX, Decentralized Exchange)</b>, 그리고 여러 거래소의 가격·유동성을 모아 보여 주는 <b>거래소 집계·중개 서비스</b>로 나누어 볼 수 있습니다. CEX는 원화 입출금과 고객지원이 편할 수 있지만 사업자가 자산을 수탁합니다. DEX는 지갑으로 직접 거래하지만 네트워크 수수료와 스마트계약 위험을 이용자가 부담합니다. 집계 서비스는 실제 주문이 어느 거래소에서 체결되는지와 수수료 구조를 확인해야 합니다.</p>
                 <p>프로젝트와 거래소는 신규 가입 보상, 거래 수수료 할인, 친구 추천, 예치·유동성 공급 보상, 거래 대회, 상장 공지, 인플루언서·커뮤니티 캠페인 등으로 이용자를 모읍니다. 이런 혜택은 참여 조건과 위험을 낮추지 않습니다. 보상 규모만 보지 말고 거래량 부풀리기 가능성, 락업·언락 조건, 원금 손실 가능성, 광고·추천의 이해관계를 함께 살펴야 합니다.</p>
               </div>
             </div>
@@ -1504,6 +1612,44 @@
               <div class="lesson-body">
                 <h3>채굴은 해시값을 먼저 찾는 경쟁입니다</h3>
                 <p>채굴은 작업증명(PoW) 방식의 네트워크에서 컴퓨팅 자원으로 거래 묶음을 검증하고 새 블록을 만드는 과정입니다. 채굴기는 블록 후보 데이터에 숫자값(논스) 등을 바꾸어 넣고 해시 함수로 계산한 결과가 네트워크 난이도 조건을 만족할 때까지 매우 많은 계산을 반복합니다. 이때의 결과값은 보통 <b>해시값</b> 또는 <b>해시</b>라고 부릅니다. ‘해시코드’라는 말도 일상적으로 쓰이지만, 채굴 성능과 방식을 설명할 때는 초당 해시 계산 횟수인 <b>해시레이트(hash rate)</b>라는 표현이 더 정확합니다.</p>
+                <h3>‘문제가 어렵다’는 무슨 뜻일까요?</h3>
+                <p>비트코인 채굴에서 "문제가 어렵다"는 것은 수학이나 암기 문제를 푸는 방식이 아니라, <b>특정한 형태의 정답이 나올 때까지 컴퓨터가 무작위 숫자를 무한히 대입하는 '숫정맞추기 게임'의 난이도가 높다</b>는 의미입니다.</p>
+                <p>이 원리는 쉽게 이해할 수 있는 3가지 개념으로 요약됩니다.</p>
+                <h4>1. 문제의 정체: "특정 형태의 자물쇠 비밀번호 찾기"</h4>
+                <ul>
+                  <li>비트코인 네트워크는 거래 내역을 모아 '블록'이라는 상자에 담아 봉인합니다.</li>
+                  <li>이 상자를 봉인하려면 cryptographic '해시 함수(SHA-256)'라는 일종의 요술 상자를 통과시켜 나온 결과값이 "앞자리에 0이 15개 이상 붙어있는 특정한 모양"이어야 합니다.</li>
+                  <li>결과값의 모양을 인위적으로 예측하는 것은 이론상 불가능하므로, 컴퓨터는 '난스(Nonce)'라는 무작위 임의 숫자를 계속 바꿔 넣으며 조건에 맞는 결과가 나올 때까지 초당 수조 번 이상 숫자를 찍어서 맞추는 작업을 수행합니다.</li>
+                </ul>
+                <h4>2. 왜 이 난이도를 '어렵게' 유지할까?</h4>
+                <ul>
+                  <li><b>발행 속도 조절:</b> 비트코인은 시스템 특성상 <b>약 10분에 1개씩</b> 새로운 블록이 생성되도록 설계되어 있습니다.</li>
+                  <li><b>자동 난이도 조절:</b> 전 세계의 성능 좋은 컴퓨터(채굴기)가 계속 늘어나 정답을 더 빠르게 맞추기 시작하면, 비트코인 시스템이 <b>자동으로 문제의 난이도를 올려</b> 정답 조건(결과값 앞자리의 0의 개수)을 더 까다롭게 만듭니다.</li>
+                </ul>
+                <h4>3. 단순하지만 '어려운' 이유</h4>
+                <ul>
+                  <li>문제 자체의 논리가 복잡해서 어려운 것이 아니라, <b>경우의 수가 엄청나게 커서 정답을 찾을 확률이 매우 낮기 때문</b>에 어렵다고 표현합니다.</li>
+                  <li>마치 '컴퓨터 수만 대가 10초 만에 겨우 하나 맞출 수 있을 정도로 비밀번호 조합 개수를 늘려 놓은 디지털 로또'라고 이해하시면 됩니다.</li>
+                </ul>
+                <p>비트코인 네트워크는 전 세계 컴퓨터의 연산력 변동에도 항상 '10분당 1개 블록 생성'이라는 규칙을 유지하기 위해 수학적으로 난이도를 통제합니다.</p>
+                <h3>해시레이트 (Hashrate: 채굴기의 연산 속도)</h3>
+                <ul>
+                  <li><b>개념:</b> 채굴기들이 암호 문제를 풀기 위해 1초당 임의의 숫자를 대입하는 횟수입니다.</li>
+                  <li><b>단위:</b> TH/s(테라해시: 1초당 1조 번), EH/s(엑사해시: 1초당 100경 번) 등으로 표기합니다.</li>
+                  <li><b>네트워크 보안:</b> 해시레이트가 높을수록 뚫기 어려운 방어벽이 쳐진 것과 같습니다. 과거 거래 기록을 위조하려면 전체 네트워크 해시레이트의 절반 이상을 장악해야 하므로, 참여하는 컴퓨터가 많아질수록 해킹은 불가능에 가까워집니다.</li>
+                </ul>
+                <h3>난이도 자동 조절 알고리즘의 작동 원리</h3>
+                <ul>
+                  <li><b>핵심 목표:</b> 컴퓨터 성능이 급격히 발전하거나 채굴자가 대거 이탈하더라도 <b>평균 블록 생성 시간 10분</b>을 사수하는 것입니다.</li>
+                  <li><b>조절 주기 (2,016 블록):</b> 시스템은 매 2,016개의 블록이 생성될 때마다 난이도 재평가를 실행합니다. 1블록당 10분이 걸려야 하므로, 정상적인 속도라면 2,016개 생성에는 정확히 14일(20,160분)이 소요되어야 합니다.</li>
+                  <li><b>작동 방식:</b>
+                    <ul>
+                      <li><b>해시레이트 증가 시:</b> 지난 2,016개 블록 생성에 14일보다 적게 걸렸다면 정답을 너무 빨리 찾고 있다는 뜻이므로 다음 2,016개 블록의 <b>난이도를 상향</b>합니다.</li>
+                      <li><b>해시레이트 감소 시:</b> 지난 2,016개 블록 생성에 14일보다 오래 걸렸다면 채굴 속도가 느려진 것이므로 다음 블록들의 <b>난이도를 하향</b>하여 정답 조건을 완화해 줍니다.</li>
+                    </ul>
+                  </li>
+                  <li><b>안전 장치:</b> 급격한 변동이나 시스템 붕괴를 막기 위해, 한 번의 주기에서 난이도는 이전 대비 최대 4배까지만 오르거나 4분의 1까지만 떨어지도록 통제됩니다.</li>
+                </ul>
                 <p>조건을 먼저 만족한 채굴자는 새 블록을 네트워크에 전파하고, 다른 참여자가 거래와 블록 규칙을 검증합니다. 유효한 블록으로 받아들여지면 블록 보상과 해당 블록의 거래 수수료를 받을 수 있습니다. 다만 보상 규모, 난이도, 코인 가격, 네트워크 참여자 수가 계속 바뀌므로 해시레이트가 높다고 수익이 보장되지는 않습니다.</p>
                 <h3>직접 채굴: 장비와 전력, 운영을 직접 관리하는 방식</h3>
                 <p>직접 채굴은 채굴자가 장비를 구매하거나 조립하고, 채굴 프로그램·지갑 주소·채굴 풀 연결을 직접 설정해 해시 계산을 수행하는 방식입니다. 비트코인처럼 특정 알고리즘에 특화된 장비가 경쟁력을 갖는 네트워크에서는 주로 ASIC(주문형 반도체) 채굴기를 사용합니다. 일부 GPU 친화적인 알고리즘에서는 그래픽카드 여러 장을 장착한 리그를 쓸 수 있지만, 네트워크마다 허용 알고리즘과 효율이 달라 장비를 먼저 사기보다 해당 메인넷의 기술 문서를 확인해야 합니다.</p>
@@ -2670,27 +2816,20 @@
       <div class="glossary-modal__backdrop" data-bok-rate-close></div>
       <section class="glossary-modal__dialog bok-rate-dialog" role="dialog" aria-modal="true" aria-labelledby="bokRateTrendTitle">
         <button class="glossary-modal__close" type="button" aria-label="닫기" data-bok-rate-close>×</button>
-        <p class="glossary-modal__label">BANK OF KOREA · BASE RATE</p>
-        <h2 id="bokRateTrendTitle">한국은행 기준금리: 최근 2년의 조정 흐름</h2>
-        <p class="bok-rate-intro">2024년 9월 5일부터 2026년 9월 5일까지의 기준금리 변경을 표시했습니다. 변동이 없었던 기간은 직선으로 이어지며, 마지막 변경은 2026년 8월 27일입니다.</p>
+        <p class="glossary-modal__label">RATE · STOCK VOLATILITY · BOND PRICE</p>
+        <h2 id="bokRateTrendTitle">최근 2년: 기준금리·KOSPI 변동성·채권 가격 한눈에 보기</h2>
+        <p class="bok-rate-intro">기준금리는 실제 변경일 기준, KOSPI는 최근 20거래일 수익률로 계산한 연율화 실현변동성, 채권은 KOSEF 국고채10년 ETF의 종가를 시작일 100으로 맞춘 가격지수입니다. 서로 단위가 달라 각 축을 따로 읽습니다.</p>
         <div class="bok-rate-summary">
           <article><span>시작 금리</span><strong>3.50%</strong><small>2024.09.05</small></article>
           <article><span>기간 중 최저</span><strong>2.50%</strong><small>2025.05.29 ~ 2026.07.15</small></article>
           <article><span>최근 기준금리</span><strong>3.00%</strong><small>2026.08.27부터</small></article>
         </div>
-        <div class="bok-rate-chart" role="img" aria-label="2024년 9월 3.50퍼센트에서 2025년 5월 2.50퍼센트까지 인하된 뒤 2026년 8월 3.00퍼센트까지 오른 한국은행 기준금리 추이">
-          <svg viewBox="0 0 900 300" aria-hidden="true">
-            <line class="grid" x1="70" y1="45" x2="860" y2="45"/><line class="grid" x1="70" y1="92" x2="860" y2="92"/><line class="grid" x1="70" y1="139" x2="860" y2="139"/><line class="grid" x1="70" y1="186" x2="860" y2="186"/><line class="grid" x1="70" y1="233" x2="860" y2="233"/>
-            <text class="axis" x="20" y="50">3.50%</text><text class="axis" x="20" y="97">3.25%</text><text class="axis" x="20" y="144">3.00%</text><text class="axis" x="20" y="191">2.75%</text><text class="axis" x="20" y="238">2.50%</text>
-            <polyline class="rate-line" points="70,45 170,45 170,92 272,92 272,139 390,139 390,186 505,186 760,186 760,139 852,139"/>
-            <circle class="rate-dot" cx="70" cy="45" r="6"/><circle class="rate-dot" cx="170" cy="92" r="6"/><circle class="rate-dot" cx="272" cy="139" r="6"/><circle class="rate-dot" cx="390" cy="186" r="6"/><circle class="rate-dot" cx="505" cy="186" r="6"/><circle class="rate-dot" cx="760" cy="139" r="6"/><circle class="rate-dot" cx="852" cy="139" r="6"/>
-            <text class="rate-label" x="55" y="30">3.50</text><text class="rate-label" x="153" y="78">3.25</text><text class="rate-label" x="255" y="125">3.00</text><text class="rate-label" x="373" y="172">2.75</text><text class="rate-label" x="488" y="172">2.50</text><text class="rate-label" x="743" y="125">2.75</text><text class="rate-label" x="835" y="125">3.00</text>
-            <text class="date" x="44" y="270">2024.09</text><text class="date" x="143" y="270">2024.10</text><text class="date" x="245" y="270">2024.11</text><text class="date" x="362" y="270">2025.02</text><text class="date" x="478" y="270">2025.05</text><text class="date" x="733" y="270">2026.07</text><text class="date" x="825" y="270">2026.08</text>
-          </svg>
+        <div class="bok-rate-chart" role="img" aria-label="최근 2년의 한국은행 기준금리, KOSPI 20거래일 실현변동성, KOSEF 국고채10년 ETF 가격지수를 비교하는 차트">
+          <div class="bok-rate-chart__canvas" id="rateMarketOverviewChart"></div>
         </div>
         <div class="bok-rate-events"><span><b>인하 구간</b><br />2024.10 ~ 2025.05: 3.50% → 2.50%</span><span><b>유지 구간</b><br />2025.05 ~ 2026.07: 2.50%</span><span><b>인상 구간</b><br />2026.07 ~ 2026.08: 2.50% → 3.00%</span><span><b>변경 단위</b><br />모두 0.25%p(25bp) 단위</span></div>
-        <p class="bok-rate-note"><b>읽는 법:</b> 기준금리는 시장금리·대출금리·채권수익률·환율 기대에 영향을 줄 수 있지만, 이들이 같은 폭·같은 시점에 움직인다는 뜻은 아닙니다. 또한 기준금리 변화만으로 특정 기업이나 주가의 방향을 결정할 수 없습니다.</p>
-        <p class="bok-rate-intro bok-rate-source"><small>출처: <a href="https://www.bok.or.kr/portal/singl/baseRate/list.do?menuNo=200643" target="_blank" rel="noopener noreferrer">한국은행 기준금리 추이</a> (2026-09-05 확인).</small></p>
+        <p class="bok-rate-note"><b>읽는 법:</b> 변동성은 KOSPI가 어느 방향으로 갔는지가 아니라 최근에 얼마나 크게 흔들렸는지를 뜻합니다. 채권 가격지수는 대표 ETF 한 종목의 과거 가격일 뿐 전체 채권시장과 같지 않으며, 기준금리가 움직였다고 주식·채권이 즉시 또는 같은 폭으로 움직인다는 뜻도 아닙니다.</p>
+        <p class="bok-rate-intro bok-rate-source"><small>출처: <a href="https://www.bok.or.kr/portal/singl/baseRate/list.do?menuNo=200643" target="_blank" rel="noopener noreferrer">한국은행 기준금리 추이</a>, Yahoo Finance (KOSPI ^KS11·KOSEF 국고채10년 148070.KS 일별 종가). 시세는 차트를 열 때 조회합니다.</small></p>
       </section>
     </div>
     <div class="glossary-modal correlation-sim-modal" id="correlationSimModal" hidden>
@@ -2989,7 +3128,70 @@
         const modal = document.getElementById("bokRateTrendModal");
         const trigger = document.getElementById("bokRateTrendTrigger");
         if (!modal || !trigger) return;
-        const open = () => { modal.hidden = false; modal.querySelector(".glossary-modal__close")?.focus(); };
+        const chartEl = document.getElementById("rateMarketOverviewChart");
+        let chart;
+        let loaded = false;
+        const rateChanges = [
+          ["2024-09-05", 3.50], ["2024-10-11", 3.25], ["2024-11-28", 3.00],
+          ["2025-02-25", 2.75], ["2025-05-29", 2.50], ["2026-07-16", 2.75], ["2026-08-27", 3.00],
+        ].map(([date, value]) => ({ time: new Date(`${date}T00:00:00+09:00`).getTime(), value }));
+        const standardDeviation = (values) => {
+          const mean = values.reduce((sum, value) => sum + value, 0) / values.length;
+          return Math.sqrt(values.reduce((sum, value) => sum + (value - mean) ** 2, 0) / values.length);
+        };
+        const realizedVolatility = (bars) => bars.map((bar, index) => {
+          if (index < 20) return { x: bar.time, y: null };
+          const returns = bars.slice(index - 20, index + 1).slice(1).map((item, offset) => Math.log(item.close / bars[index - 20 + offset].close));
+          return { x: bar.time, y: Number((standardDeviation(returns) * Math.sqrt(252) * 100).toFixed(2)) };
+        });
+        const baseRateSeries = (bars) => bars.map((bar) => {
+          const applicable = rateChanges.filter((change) => change.time <= bar.time).at(-1) || rateChanges[0];
+          return { x: bar.time, y: applicable.value };
+        });
+        const priceIndex = (bars) => {
+          const firstClose = bars[0].close;
+          return bars.map((bar) => ({ x: bar.time, y: Number((bar.close / firstClose * 100).toFixed(2)) }));
+        };
+        const renderChart = (data) => {
+          if (!window.ApexCharts || !chartEl) return;
+          const volatility = realizedVolatility(data.kospi.bars);
+          const bondIndex = priceIndex(data.bond_etf.bars);
+          const options = {
+            chart: { type: "line", height: "100%", toolbar: { show: false }, animations: { enabled: false }, fontFamily: "inherit" },
+            series: [
+              { name: "한국은행 기준금리", data: baseRateSeries(data.kospi.bars) },
+              { name: "KOSPI 20일 실현변동성", data: volatility },
+              { name: "국고채10년 ETF 가격지수", data: bondIndex },
+            ],
+            colors: ["#2563eb", "#ef7d32", "#16805a"],
+            stroke: { width: [3, 2.5, 2.5], curve: "straight" },
+            xaxis: { type: "datetime", labels: { datetimeUTC: false, format: "yy.MM" } },
+            yaxis: [
+              { seriesName: "한국은행 기준금리", min: 2.25, max: 3.75, tickAmount: 3, title: { text: "기준금리 (%)" }, labels: { formatter: (value) => `${value.toFixed(2)}%` } },
+              { seriesName: "KOSPI 20일 실현변동성", opposite: true, title: { text: "변동성 (%)" }, labels: { formatter: (value) => `${value.toFixed(0)}%` } },
+              { seriesName: "국고채10년 ETF 가격지수", opposite: true, offsetX: 50, title: { text: "가격지수" }, labels: { formatter: (value) => value.toFixed(0) } },
+            ],
+            tooltip: { shared: true, x: { format: "yyyy.MM.dd" }, y: { formatter: (value, { seriesIndex }) => value == null ? "—" : seriesIndex < 2 ? `${value.toFixed(2)}%` : value.toFixed(2) } },
+            legend: { position: "top", horizontalAlign: "left", fontSize: "12px" },
+            grid: { borderColor: "#dbe4f2", padding: { right: 58 } },
+            noData: { text: "차트 데이터를 불러오는 중입니다." },
+          };
+          if (chart) chart.updateOptions(options, false, true);
+          else { chart = new ApexCharts(chartEl, options); chart.render(); }
+        };
+        const loadChart = async () => {
+          if (loaded || !chartEl) return;
+          chartEl.textContent = "차트 데이터를 불러오는 중입니다.";
+          try {
+            const response = await fetch("/market/rate-market-history?start=2024-09-05&end=2026-09-06");
+            if (!response.ok) throw new Error("market history unavailable");
+            renderChart(await response.json());
+            loaded = true;
+          } catch (_) {
+            chartEl.textContent = "시세 데이터를 불러오지 못했습니다. 잠시 후 다시 열어 주세요.";
+          }
+        };
+        const open = () => { modal.hidden = false; loadChart(); modal.querySelector(".glossary-modal__close")?.focus(); };
         const close = () => { if (!modal.hidden) { modal.hidden = true; trigger.focus(); } };
         trigger.addEventListener("click", open);
         modal.querySelectorAll("[data-bok-rate-close]").forEach((element) => element.addEventListener("click", close));

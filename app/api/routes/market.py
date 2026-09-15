@@ -97,6 +97,64 @@ _beta_ttl = timedelta(minutes=15)
 _kospi_history_cache: dict[str, tuple[datetime, dict[str, Any]]] = {}
 _kospi_history_ttl = timedelta(days=30)
 
+_rate_market_history_cache: dict[str, tuple[datetime, dict[str, Any]]] = {}
+_rate_market_history_ttl = timedelta(hours=6)
+
+
+@router.get("/rate-market-history")
+async def rate_market_history(
+    start: date = Query(description="조회 시작일(YYYY-MM-DD)"),
+    end: date = Query(description="조회 종료일(YYYY-MM-DD, 미포함)"),
+) -> dict[str, Any]:
+    """Return daily KOSPI and a representative 10-year KTB ETF series for a learning chart."""
+    if start >= end or (end - start).days > 760:
+        raise HTTPException(status_code=400, detail="조회 기간은 최대 760일이며 시작일은 종료일보다 앞서야 합니다.")
+
+    cache_key = f"{start.isoformat()}:{end.isoformat()}"
+    now = datetime.now(timezone.utc)
+    cached = _rate_market_history_cache.get(cache_key)
+    if cached and now - cached[0] < _rate_market_history_ttl:
+        return cached[1]
+
+    kst = timezone(timedelta(hours=9))
+    period1 = int(datetime.combine(start, datetime.min.time(), tzinfo=kst).timestamp())
+    period2 = int(datetime.combine(end, datetime.min.time(), tzinfo=kst).timestamp())
+
+    async def fetch_bars(symbol: str) -> list[dict[str, int | float]]:
+        chart_url = f"https://query2.finance.yahoo.com/v8/finance/chart/{symbol}?period1={period1}&period2={period2}&interval=1d"
+        async with httpx.AsyncClient(timeout=12.0, follow_redirects=True) as client:
+            response = await client.get(chart_url, headers={"User-Agent": "FinanceRagLab/1.0 (educational use)"})
+            response.raise_for_status()
+        result = response.json()["chart"]["result"][0]
+        timestamps = result.get("timestamp") or []
+        closes = result["indicators"]["quote"][0].get("close") or []
+        return [
+            {"time": timestamp * 1000, "close": round(float(close), 2)}
+            for timestamp, close in zip(timestamps, closes)
+            if close is not None and isfinite(float(close))
+        ]
+
+    try:
+        import asyncio
+
+        kospi, bond_etf = await asyncio.gather(fetch_bars("%5EKS11"), fetch_bars("148070.KS"))
+    except (httpx.HTTPError, KeyError, IndexError, TypeError, ValueError) as exc:
+        raise HTTPException(status_code=502, detail="비교 차트의 과거 시세를 불러오지 못했습니다.") from exc
+
+    if len(kospi) < 21 or len(bond_etf) < 2:
+        raise HTTPException(status_code=502, detail="비교 차트에 필요한 충분한 과거 시세가 없습니다.")
+
+    payload = {
+        "start": start.isoformat(),
+        "end": end.isoformat(),
+        "kospi": {"symbol": "^KS11", "name": "KOSPI", "bars": kospi},
+        "bond_etf": {"symbol": "148070.KS", "name": "KOSEF 국고채10년", "bars": bond_etf},
+        "source": "Yahoo Finance",
+        "updated_at": now.isoformat(),
+    }
+    _rate_market_history_cache[cache_key] = (now, payload)
+    return payload
+
 
 @router.get("/kospi-history")
 async def kospi_history(
